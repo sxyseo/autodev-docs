@@ -1,0 +1,963 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>AutoDev - Tailor Your AI Coding Experience Blog</title>
+        <link>https://ide.unitmesh.cc/en/blog</link>
+        <description>AutoDev - Tailor Your AI Coding Experience Blog</description>
+        <lastBuildDate>Wed, 26 Mar 2025 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[AutoDev 2.0 Officially Released! Agents x Open Source Ecosystem = Infinite Possibilities]]></title>
+            <link>https://ide.unitmesh.cc/en/blog/2025/03/26/autodev-2-0</link>
+            <guid>https://ide.unitmesh.cc/en/blog/2025/03/26/autodev-2-0</guid>
+            <pubDate>Wed, 26 Mar 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Note: After months of waiting, domestic models (DS V3-0324) finally support AutoDev's capabilities. It's time to release AutoDev 2.0!]]></description>
+            <content:encoded><![CDATA[<p>Note: After months of waiting, domestic models (DS V3-0324) finally support AutoDev's capabilities. It's time to release AutoDev 2.0!</p>
+<p>In April 2023, we developed AutoDev's first feature: AutoCRUD. After two years of rapid iteration, we've phased out this feature. The new AutoDev 2.0 is here - agent-driven AI programming has fundamentally changed our previous architecture. In AutoDev 2.0, you can:</p>
+<ul>
+<li>Use coding agent Sketch for automated programming</li>
+<li>Leverage automated programming planner AutoDev Planner</li>
+<li>Utilize system migration assistant Bridge for legacy system refactoring</li>
+<li>Employ Observer to dynamically monitor code changes in IDE</li>
+<li>Connect to tool ecosystem via Model Context Protocol (MCP)</li>
+<li>Use multiple open-source models in different scenarios (coding, reasoning, application, completion, etc.)</li>
+<li>...</li>
+</ul>
+<p>The best part? AutoDev 2.0 is open-source. You're free to use, modify, and share it. Let's explore this world of infinite possibilities together! Meanwhile, as the second-generation AI programming tool on the JetBrains IDE platform, you can fully leverage JetBrains' plugin ecosystem to empower AutoDev 2.0!</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="coding-agent-sketch">Coding Agent: Sketch<a href="https://ide.unitmesh.cc/en/blog/2025/03/26/autodev-2-0#coding-agent-sketch" class="hash-link" aria-label="Direct link to Coding Agent: Sketch" title="Direct link to Coding Agent: Sketch">​</a></h2>
+<p>Our motivation for developing AutoDev 2.0 came from the launch of DeepSeek V3 model. We built Sketch View using the Shire agent language, first applying it to multi-file programming support. We then integrated it into AutoDev 2.0, leveraging the rich IDEA plugin ecosystem to create better IDE programming experiences.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="interactive-decision-view-sketch-view">Interactive Decision View: Sketch View<a href="https://ide.unitmesh.cc/en/blog/2025/03/26/autodev-2-0#interactive-decision-view-sketch-view" class="hash-link" aria-label="Direct link to Interactive Decision View: Sketch View" title="Direct link to Interactive Decision View: Sketch View">​</a></h3>
+<p>Sketch View provides a new interactive interface that helps you better understand architectures and make decisions. Key features:</p>
+<ul>
+<li><strong>Interactive Design</strong>. Diverse Patch/Diff processing with Lint checks for generated code</li>
+<li><strong>Developer Experience</strong>. Automatic WebView launch for compilation verification when starting dev services</li>
+<li><strong>Quality &amp; Security</strong>. Dependency security checks when generating dependency files</li>
+</ul>
+<p>You can also use it to view code structures and improve code writing.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="isolated-environment-tool-invocation-devins">Isolated Environment Tool Invocation: DevIns<a href="https://ide.unitmesh.cc/en/blog/2025/03/26/autodev-2-0#isolated-environment-tool-invocation-devins" class="hash-link" aria-label="Direct link to Isolated Environment Tool Invocation: DevIns" title="Direct link to Isolated Environment Tool Invocation: DevIns">​</a></h3>
+<p>In AutoDev 1.0, we designed DevIns DSL to build instruction abstractions for isolated environments. With DevIns instructions, AutoDev can:</p>
+<ul>
+<li><strong>Safe Operations</strong>. Perform security checks on instructions like Shell and SQL, instead of relying on unreliable LLM analysis</li>
+<li><strong>Model Agnostic</strong>. Enable tool invocation using CoT across different models without function tool dependencies</li>
+<li><strong>Key Context</strong>. Enrich syntax analysis and architectural views through IDE's PSI interfaces, providing system-critical context</li>
+</ul>
+<p>DevIns also integrates seamlessly with MCP ecosystem for better tool invocation.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="visible-task-planning-autodev-planner">Visible Task Planning: AutoDev Planner<a href="https://ide.unitmesh.cc/en/blog/2025/03/26/autodev-2-0#visible-task-planning-autodev-planner" class="hash-link" aria-label="Direct link to Visible Task Planning: AutoDev Planner" title="Direct link to Visible Task Planning: AutoDev Planner">​</a></h2>
+<p>Planner is Sketch's core feature, offering a new task planning experience. With AutoDev Planner, you can:</p>
+<ul>
+<li><strong>Visible Task Planning</strong>. Track current task progress through Pin and Planner ToolWindow</li>
+<li><strong>Dynamic Task Planning</strong>. AI dynamically adjusts task plans based on context (model-dependent, may not update in real-time)</li>
+<li><strong>Manual Task Execution</strong>. Manually execute unfinished tasks to better adjust planning</li>
+</ul>
+<p>Combined with reasoning models like DeepSeek R1, AutoDev Planner can better adapt task planning to user needs.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="passive-error-observation-observer">Passive Error Observation: Observer<a href="https://ide.unitmesh.cc/en/blog/2025/03/26/autodev-2-0#passive-error-observation-observer" class="hash-link" aria-label="Direct link to Passive Error Observation: Observer" title="Direct link to Passive Error Observation: Observer">​</a></h2>
+<p>Observer is a new Sketch feature that helps monitor code changes. It can observe:</p>
+<ul>
+<li>Test failures. Automatically sends failure context (relevant code) to models</li>
+<li>Build failures. Sends build logs (Gradle/Maven) to models automatically</li>
+<li>Dependency addition failures. Automatically reports issues to models</li>
+<li>...</li>
+</ul>
+<p>Through passive error observation, AutoDev better understands code changes to improve development efficiency.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="legacy-system-migration-agent-autodev-bridge-experimental">Legacy System Migration Agent: AutoDev Bridge (Experimental)<a href="https://ide.unitmesh.cc/en/blog/2025/03/26/autodev-2-0#legacy-system-migration-agent-autodev-bridge-experimental" class="hash-link" aria-label="Direct link to Legacy System Migration Agent: AutoDev Bridge (Experimental)" title="Direct link to Legacy System Migration Agent: AutoDev Bridge (Experimental)">​</a></h2>
+<p>Bridge is our new feature for legacy system migration, including:</p>
+<ul>
+<li>Migration Paths. LLM-powered generation of system migration paths using "Explore-Sense-Respond" framework</li>
+<li>Architectural Views. AI-powered tool invocation for deep system scanning to generate C4 model-compliant blueprints</li>
+<li>Business Logic Analysis. Combines AST parsing and runtime call chain tracing for precise business logic restoration</li>
+<li>Migration Execution. Generates multi-level verification including unit tests, integration tests, and E2E tests to ensure post-migration functionality</li>
+</ul>
+<p>As an experimental feature, AutoDev Bridge isn't fully mature yet, but we believe it will play important roles in future migrations.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="devops-ecosystem-integration-bidirectional-mcp">DevOps Ecosystem Integration: Bidirectional MCP<a href="https://ide.unitmesh.cc/en/blog/2025/03/26/autodev-2-0#devops-ecosystem-integration-bidirectional-mcp" class="hash-link" aria-label="Direct link to DevOps Ecosystem Integration: Bidirectional MCP" title="Direct link to DevOps Ecosystem Integration: Bidirectional MCP">​</a></h2>
+<p>MCP (Model Context Protocol) is an excellent open protocol helping AI agents better understand context. In AutoDev 2.0, we've implemented bidirectional integration between MCP and JetBrains plugin ecosystem for better tool invocation:</p>
+<ul>
+<li>MCP as Tool. Encapsulates MCP through DevIns instructions to invoke third-party tools</li>
+<li>AutoDev as Service. Exposes AutoDev as MCP service callable by any Agent Tool</li>
+</ul>
+<p>This creates seamless integration between AutoDev and the tool ecosystem, enhancing contextual capabilities and reducing hallucinations.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="others">Others<a href="https://ide.unitmesh.cc/en/blog/2025/03/26/autodev-2-0#others" class="hash-link" aria-label="Direct link to Others" title="Direct link to Others">​</a></h2>
+<p>We've redesigned the UI configuration page. For details, refer to new documentation: <a href="https://ide.unitmesh.cc/quick-start" target="_blank" rel="noopener noreferrer">https://ide.unitmesh.cc/quick-start</a></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="autodev-1x-features">AutoDev 1.x Features<a href="https://ide.unitmesh.cc/en/blog/2025/03/26/autodev-2-0#autodev-1x-features" class="hash-link" aria-label="Direct link to AutoDev 1.x Features" title="Direct link to AutoDev 1.x Features">​</a></h3>
+<p>AutoDev 1.x features remain available, with less-used features like AutoCRUD removed.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="tool-issues-remain-can-efficiency-really-improve">Tool Issues Remain: Can Efficiency Really Improve?<a href="https://ide.unitmesh.cc/en/blog/2025/03/26/autodev-2-0#tool-issues-remain-can-efficiency-really-improve" class="hash-link" aria-label="Direct link to Tool Issues Remain: Can Efficiency Really Improve?" title="Direct link to Tool Issues Remain: Can Efficiency Really Improve?">​</a></h3>
+<p>Even with significant efficiency improvements, productivity gains might be limited. How much time do you actually spend writing code?????????????</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="install-autodev-20">Install AutoDev 2.0<a href="https://ide.unitmesh.cc/en/blog/2025/03/26/autodev-2-0#install-autodev-20" class="hash-link" aria-label="Direct link to Install AutoDev 2.0" title="Direct link to Install AutoDev 2.0">​</a></h3>
+<p>Download the latest version from GitHub: <a href="https://github.com/unit-mesh/auto-dev" target="_blank" rel="noopener noreferrer">https://github.com/unit-mesh/auto-dev</a></p>
+<p>Or add plugin repository via:<br>
+<code>Settings</code> → <code>Plugins</code> → <code>Marketplace</code> → <code>Manage Plugin Repositories</code> → <code>Add</code><br>
+<a href="https://plugin.unitmesh.cc/updatePlugins.xml" target="_blank" rel="noopener noreferrer">https://plugin.unitmesh.cc/updatePlugins.xml</a><br>
+<!-- -->Then search for <code>AutoDev</code></p>
+<p>We're working to relist on JetBrains Marketplace, but manual installation via source code is currently available.</p>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[AutoDev Planner]]></title>
+            <link>https://ide.unitmesh.cc/en/blog/2025/03/18/autodev-planner</link>
+            <guid>https://ide.unitmesh.cc/en/blog/2025/03/18/autodev-planner</guid>
+            <pubDate>Tue, 18 Mar 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Recently, we've implemented a new feature in AutoDev: AutoDev Planner, a coding task planning functionality built on the DeepSeek R1 reasoning model. Of course, besides DeepSeek R1, you can also use other models.]]></description>
+            <content:encoded><![CDATA[<p>Recently, we've implemented a new feature in AutoDev: AutoDev Planner, a coding task planning functionality built on the DeepSeek R1 reasoning model. Of course, besides DeepSeek R1, you can also use other models.</p>
+<p>In AutoDev Planner, AI will generate a task plan for subsequent coding based on your input and collected context. This coding plan can then be used with other instruction-following models like DeepSeek V3 to generate code, edit code, etc.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="insight-1-visibility-of-ai-coding-task-progress">Insight 1: Visibility of AI Coding Task Progress<a href="https://ide.unitmesh.cc/en/blog/2025/03/18/autodev-planner#insight-1-visibility-of-ai-coding-task-progress" class="hash-link" aria-label="Direct link to Insight 1: Visibility of AI Coding Task Progress" title="Direct link to Insight 1: Visibility of AI Coding Task Progress">​</a></h2>
+<p>When designing AI coding agents, an interesting consideration is how users perceive coding task progress - whether they should explicitly see the progress or implicitly sense it.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="copilot-workspace-early-explicit-ai-tasks">Copilot Workspace: Early Explicit AI Tasks<a href="https://ide.unitmesh.cc/en/blog/2025/03/18/autodev-planner#copilot-workspace-early-explicit-ai-tasks" class="hash-link" aria-label="Direct link to Copilot Workspace: Early Explicit AI Tasks" title="Direct link to Copilot Workspace: Early Explicit AI Tasks">​</a></h3>
+<p>Last year, I experimented with GitHub Copilot Workspace for frontend development. After trying dozens of small requirements (even simple i18n translations), its performance didn't meet expectations, likely limited by GPT-4's capabilities. However, Copilot Workspace's approach remains valuable:</p>
+<ul>
+<li>Brainstorm. Conduct brainstorming for user tasks</li>
+<li>Task. Convert tasks into editable plans</li>
+<li>Execute. Execute plans to generate code Pull Requests</li>
+<li>PR. Submit changes as Pull Requests</li>
+</ul>
+<p>Users can explicitly observe AI's thinking, editing, and execution processes, though it doesn't dynamically adjust plans (based on 2024 understanding).</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="cursor-implicit-task-automation-with-retries">Cursor: Implicit Task Automation with Retries<a href="https://ide.unitmesh.cc/en/blog/2025/03/18/autodev-planner#cursor-implicit-task-automation-with-retries" class="hash-link" aria-label="Direct link to Cursor: Implicit Task Automation with Retries" title="Direct link to Cursor: Implicit Task Automation with Retries">​</a></h3>
+<p>The popular AI coding tool Cursor provides excellent AI Editor experience:</p>
+<ul>
+<li>Automatically collects IDE context</li>
+<li>Edits code</li>
+<li>Automatically fixes lint issues and retries on errors</li>
+<li>...</li>
+</ul>
+<p>While users can vaguely understand AI operations through text, frequent retries quickly obscure the process.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="jetbrains-junie-dynamic-ai-task-planning">JetBrains Junie: Dynamic AI Task Planning<a href="https://ide.unitmesh.cc/en/blog/2025/03/18/autodev-planner#jetbrains-junie-dynamic-ai-task-planning" class="hash-link" aria-label="Direct link to JetBrains Junie: Dynamic AI Task Planning" title="Direct link to JetBrains Junie: Dynamic AI Task Planning">​</a></h3>
+<p>The latest AI coding tool JetBrains Junie offers dynamic task planning:</p>
+<ul>
+<li>Analyzes problems and generates task plans</li>
+<li>Executes tasks step-by-step with contextual awareness</li>
+<li>Dynamically adjusts plans during execution</li>
+</ul>
+<p>Users can observe continuous plan adjustments until task completion or termination.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="insight-2-the-potential-of-reasoning-models-in-task-planning">Insight 2: The Potential of Reasoning Models in Task Planning<a href="https://ide.unitmesh.cc/en/blog/2025/03/18/autodev-planner#insight-2-the-potential-of-reasoning-models-in-task-planning" class="hash-link" aria-label="Direct link to Insight 2: The Potential of Reasoning Models in Task Planning" title="Direct link to Insight 2: The Potential of Reasoning Models in Task Planning">​</a></h2>
+<p>As we know, 2024's reasoning models ("deep-thinking models") have expanded possibilities. Through experiments in AutoDev Sketch (similar to Cursor Composer's auto-coding agent), we found DeepSeek R1 outperforms other domestic models in tool invocation (based on DevIns instructions) with same context. Compared to DeepSeek V3, R1 utilizes more tools.</p>
+<p>Ideally, we should use R1 for initial tool dialogue and secondary task planning, but its slower speed (equivalent to extra API calls) remains a constraint. However, R1's advantages remain evident, and we believe others share similar experiences.</p>
+<p>Of course, large-scale experiments haven't been conducted due to the significant effort required to build comprehensive test datasets.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="autodev-planner-task-planning-for-agent-programming">AutoDev Planner: Task Planning for Agent Programming<a href="https://ide.unitmesh.cc/en/blog/2025/03/18/autodev-planner#autodev-planner-task-planning-for-agent-programming" class="hash-link" aria-label="Direct link to AutoDev Planner: Task Planning for Agent Programming" title="Direct link to AutoDev Planner: Task Planning for Agent Programming">​</a></h2>
+<p>Based on these insights, we developed the new anthropomorphic feature: AutoDev Planner to enhance Sketch's task planning capabilities. Core features include:</p>
+<ul>
+<li><strong>Visible Task Planning</strong>: Track progress through Pin and Planner ToolWindow</li>
+<li><strong>Dynamic Planning</strong>: AI adjusts plans contextually (model-dependent)</li>
+<li><strong>Manual Task Execution</strong>: Users can manually execute pending tasks</li>
+<li><strong>Plan Review</strong>: Manual model invocation for plan review (automatic review avoided due to token costs)</li>
+</ul>
+<p>The core concept remains simple: invoke models to generate plans and display interactions.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="key-point-1-reasoning-model-based-planning">Key Point 1: Reasoning Model-Based Planning<a href="https://ide.unitmesh.cc/en/blog/2025/03/18/autodev-planner#key-point-1-reasoning-model-based-planning" class="hash-link" aria-label="Direct link to Key Point 1: Reasoning Model-Based Planning" title="Direct link to Key Point 1: Reasoning Model-Based Planning">​</a></h3>
+<p>Since reasoning models differ from regular models in prompt understanding and instruction following, we redesigned prompts for R1 compatibility.</p>
+<p>After initial context collection and reasoning model configuration, R1 generates task plans containing: tasks, steps, and progress status. These plans are then displayed to users.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="key-point-2-interactive-task-planning">Key Point 2: Interactive Task Planning<a href="https://ide.unitmesh.cc/en/blog/2025/03/18/autodev-planner#key-point-2-interactive-task-planning" class="hash-link" aria-label="Direct link to Key Point 2: Interactive Task Planning" title="Direct link to Key Point 2: Interactive Task Planning">​</a></h3>
+<p>Unlike other AI coding tools, we emphasize task planning as critical interaction:</p>
+<ul>
+<li><strong>Status Display</strong>:<!-- -->
+<ul>
+<li>Completed tasks marked</li>
+<li>Manual execution for pending tasks</li>
+</ul>
+</li>
+<li><strong>Pin</strong>: Pin tasks to IDE locations</li>
+<li><strong>File Interaction</strong>: Click filenames in tasks to open files</li>
+<li><strong>Editing</strong>: Pause and adjust unsuitable plans</li>
+<li><strong>Review</strong>: Manual plan review invocation</li>
+</ul>
+<p>Visualizing tasks enhances AI coding experience - the original intention of AutoDev Planner.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="conclusion">Conclusion<a href="https://ide.unitmesh.cc/en/blog/2025/03/18/autodev-planner#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion">​</a></h2>
+<p>AutoDev Planner is a reasoning model-based task planning feature that helps users better understand AI coding progress and adjust plans. While still imperfect, we welcome issues and PRs on GitHub.</p>
+<p>Download the latest version: <a href="https://github.com/unit-mesh/auto-dev/releases" target="_blank" rel="noopener noreferrer">https://github.com/unit-mesh/auto-dev/releases</a></p>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[AutoDev MCP]]></title>
+            <link>https://ide.unitmesh.cc/en/blog/2025/03/12/autodev-mcp</link>
+            <guid>https://ide.unitmesh.cc/en/blog/2025/03/12/autodev-mcp</guid>
+            <pubDate>Wed, 12 Mar 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[In the realm of Agentic Coding, tool usage (Tool Use/Function calling) presents a fascinating topic. Completing a software development task requires utilizing numerous tools, extending beyond the native capabilities of IDEs and their plugin ecosystems to include various external tools like Git, Docker, Kubernetes, Jenkins, etc. How to enable AI to be aware of more tools and their usage presents an intriguing challenge.]]></description>
+            <content:encoded><![CDATA[<p>In the realm of Agentic Coding, tool usage (Tool Use/Function calling) presents a fascinating topic. Completing a software development task requires utilizing numerous tools, extending beyond the native capabilities of IDEs and their plugin ecosystems to include various external tools like Git, Docker, Kubernetes, Jenkins, etc. How to enable AI to be aware of more tools and their usage presents an intriguing challenge.</p>
+<p>Therefore, I spent a day implementing relevant functionalities in AutoDev: establishing AutoDev as an MCP service that can be invoked by any Agent Tool, while also enabling AutoDev to function as an MCP client capable of calling any MCP service.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="prelude-1-from-progressive-ai-agent-solutions-to-autodev-as-mcp-service">Prelude 1: From Progressive AI Agent Solutions to AutoDev as MCP Service<a href="https://ide.unitmesh.cc/en/blog/2025/03/12/autodev-mcp#prelude-1-from-progressive-ai-agent-solutions-to-autodev-as-mcp-service" class="hash-link" aria-label="Direct link to Prelude 1: From Progressive AI Agent Solutions to AutoDev as MCP Service" title="Direct link to Prelude 1: From Progressive AI Agent Solutions to AutoDev as MCP Service">​</a></h2>
+<p>Within the broader context of AI Agents, such as automated Computer Use scenarios, IDEs themselves become just another invokable Agent tool. Current AI Agent implementations demonstrate a progressive approach to Agent Tool usage - as developers familiar with E2E testing know, UI automation proves highly inefficient. This explains why we wrote minimal UI automation tests when developing AutoDev.</p>
+<p>While our current AI Coding implementation centers around IDEs, another scenario exists where Agent Tools take precedence:</p>
+<ul>
+<li>Agents obtain requirements through browser manipulation</li>
+<li>Agents launch IDEs to write code</li>
+<li>Agents operate DevOps tools for deployment</li>
+<li>...</li>
+</ul>
+<p>Given that Agent Tool invocation appears to be an emerging trend towards 2025, why not position AutoDev as an MCP service? This would allow any Agent Tool (including Cursor, Cline, GitHub Copilot, etc.) to leverage AutoDev's services and access high-quality IDE context.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="prelude-2-from-mcp-as-agent-tool-ecosystem-to-mcp-services-as-autodev-commands">Prelude 2: From MCP as Agent Tool Ecosystem to MCP Services as AutoDev Commands<a href="https://ide.unitmesh.cc/en/blog/2025/03/12/autodev-mcp#prelude-2-from-mcp-as-agent-tool-ecosystem-to-mcp-services-as-autodev-commands" class="hash-link" aria-label="Direct link to Prelude 2: From MCP as Agent Tool Ecosystem to MCP Services as AutoDev Commands" title="Direct link to Prelude 2: From MCP as Agent Tool Ecosystem to MCP Services as AutoDev Commands">​</a></h2>
+<p>Previously, AutoDev prioritized leveraging IDE ecosystems and its own plugin architecture to enhance AI-supported end-to-end development workflows. However, even with enriched plugin capabilities, we still require numerous Agent Tools.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="agent-tools-define-baseline-capabilities-for-ai-ides">Agent Tools Define Baseline Capabilities for AI IDEs<a href="https://ide.unitmesh.cc/en/blog/2025/03/12/autodev-mcp#agent-tools-define-baseline-capabilities-for-ai-ides" class="hash-link" aria-label="Direct link to Agent Tools Define Baseline Capabilities for AI IDEs" title="Direct link to Agent Tools Define Baseline Capabilities for AI IDEs">​</a></h3>
+<p>Our analysis of various AI Coding tools reveals that VSCode-based AI Editors demonstrate remarkably similar tooling capabilities, which can be comprehensively charted. In contrast, IDE-based AI Coding plugins (like AutoDev and JetBrains Junie) offer more sophisticated capabilities including AST manipulation, debugging, and FQN lookups - typically providing around 20 core IDE capabilities compared to VSCode's dozen.</p>
+<p>As AI Coding expands into requirements management, deployment, and operations, the corresponding tool ecosystem will inevitably grow more diverse.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="mcp-open-source-ecosystem-emerges">MCP Open Source Ecosystem Emerges<a href="https://ide.unitmesh.cc/en/blog/2025/03/12/autodev-mcp#mcp-open-source-ecosystem-emerges" class="hash-link" aria-label="Direct link to MCP Open Source Ecosystem Emerges" title="Direct link to MCP Open Source Ecosystem Emerges">​</a></h3>
+<p>The Model Context Protocol (MCP), introduced by Anthropic (creators of Claude), provides standardized interfaces for LLM applications to access external information, tools, and resources. While AutoDev offers powerful customization capabilities like Custom Agents:</p>
+<ul>
+<li>Some tools remain unpredictable (e.g., internal corporate tools)</li>
+<li>MCP's tool ecosystem is rapidly maturing into a standard (despite regional variations)</li>
+</ul>
+<p>Since Cursor and Cline adopted MCP, numerous open-source MCP implementations have formed a thriving overseas ecosystem.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="autodev-x-mcp-bidirectional-empowerment">AutoDev x MCP: Bidirectional Empowerment<a href="https://ide.unitmesh.cc/en/blog/2025/03/12/autodev-mcp#autodev-x-mcp-bidirectional-empowerment" class="hash-link" aria-label="Direct link to AutoDev x MCP: Bidirectional Empowerment" title="Direct link to AutoDev x MCP: Bidirectional Empowerment">​</a></h2>
+<p>Building upon MCP-related plugins and the io.modelcontextprotocol ecosystem, we developed a bidirectional empowerment framework:</p>
+<ul>
+<li>AutoDev functions as an MCP server accessible to any Agent Tool</li>
+<li>AutoDev operates as an MCP client invoking any MCP service</li>
+</ul>
+<p>This dual approach consolidates our MCP capabilities.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="autodev-as-mcp-server">AutoDev as MCP Server<a href="https://ide.unitmesh.cc/en/blog/2025/03/12/autodev-mcp#autodev-as-mcp-server" class="hash-link" aria-label="Direct link to AutoDev as MCP Server" title="Direct link to AutoDev as MCP Server">​</a></h3>
+<p>Based on JetBrains' MCP implementation, we enable AutoDev's MCP server capability (Note: Requires MCP activation in configuration). Simple JSON configuration suffices, as shown in this Cline plugin example:</p>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">"mcpServers"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">"AutoDev"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token property" style="color:#36acaa">"command"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"npx"</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token property" style="color:#36acaa">"args"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">[</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token string" style="color:#e3116c">"-y"</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token string" style="color:#e3116c">"@jetbrains/mcp-proxy"</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token property" style="color:#36acaa">"disabled"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token boolean" style="color:#36acaa">false</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token property" style="color:#36acaa">"autoApprove"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>The current version leverages official capabilities with some database enhancements, pending domestic MCP service availability for further expansion.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="autodev-as-mcp-client">AutoDev as MCP Client<a href="https://ide.unitmesh.cc/en/blog/2025/03/12/autodev-mcp#autodev-as-mcp-client" class="hash-link" aria-label="Direct link to AutoDev as MCP Client" title="Direct link to AutoDev as MCP Client">​</a></h3>
+<p>Similarly, configure MCP services in AutoDev's Custom Agent page. Official MCP example:</p>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">"mcpServers"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">"filesystem"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token property" style="color:#36acaa">"command"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"npx"</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token property" style="color:#36acaa">"args"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">[</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token string" style="color:#e3116c">"-y"</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token string" style="color:#e3116c">"@modelcontextprotocol/server-filesystem"</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token string" style="color:#e3116c">"/Volumes/source/ai/auto-dev"</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">      </span><span class="token punctuation" style="color:#393A34">]</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>The MCP service's tools then become available in AutoDev. DevIns conversion example:</p>
+<p>/list_directory</p>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> </span><span class="token property" style="color:#36acaa">"path"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"/Volumes/source/ai/autocrud/docs/mcp"</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Through AutoDev's powerful DevIns Commands, users can now invoke any MCP service - including AI Agents.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="additional-notes">Additional Notes<a href="https://ide.unitmesh.cc/en/blog/2025/03/12/autodev-mcp#additional-notes" class="hash-link" aria-label="Direct link to Additional Notes" title="Direct link to Additional Notes">​</a></h2>
+<p>Life is short, I have AI.</p>
+<ul>
+<li>Detailed documentation: <a href="https://ide.unitmesh.cc/mcp" target="_blank" rel="noopener noreferrer">https://ide.unitmesh.cc/mcp</a></li>
+<li>Download latest AutoDev (v2.0.0-rc.2): <a href="https://github.com/unit-mesh/auto-dev/releases/tag/v2.0.0-rc.2" target="_blank" rel="noopener noreferrer">https://github.com/unit-mesh/auto-dev/releases/tag/v2.0.0-rc.2</a></li>
+</ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[AutoDev Bridge]]></title>
+            <link>https://ide.unitmesh.cc/en/blog/2025/03/06/autodev-bridge</link>
+            <guid>https://ide.unitmesh.cc/en/blog/2025/03/06/autodev-bridge</guid>
+            <pubDate>Thu, 06 Mar 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[In 2023, given the limited capabilities of models at that time, we designed a series of legacy system features in AutoDev. By 2025, through successive iterations of the autonomous programming agent AutoDev Sketch, we began exploring how to apply AI agents to legacy systems, which led to the conception of AutoDev Bridge.]]></description>
+            <content:encoded><![CDATA[<p>In 2023, given the limited capabilities of models at that time, we designed a series of legacy system features in AutoDev. By 2025, through successive iterations of the autonomous programming agent AutoDev Sketch, we began exploring how to apply AI agents to legacy systems, which led to the conception of AutoDev Bridge.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="why-can-large-language-models-perform-better">Why Can Large Language Models Perform Better?<a href="https://ide.unitmesh.cc/en/blog/2025/03/06/autodev-bridge#why-can-large-language-models-perform-better" class="hash-link" aria-label="Direct link to Why Can Large Language Models Perform Better?" title="Direct link to Why Can Large Language Models Perform Better?">​</a></h2>
+<p>Previously, our company Thoughtworks had accumulated extensive experience in this domain, including migration strategy design and safety net construction. However, regardless of the migration pattern used (Strangler, Rehabilitator, etc.), human intervention was always ultimately required. By 2025, an increasing number of AI agents have demonstrated capabilities for automated migration, prompting us to refine our open-source solution.</p>
+<p>Why can large language models perform better in legacy system migration?</p>
+<ul>
+<li><strong>Designing reasonable path planning</strong>. Typically prioritizing cost considerations, LLMs serve as excellent knowledge bases for cost assessment.</li>
+<li><strong>Generating architectural blueprints</strong>. By analyzing directory structures, dependency information, and APIs, AI can outline preliminary architectural blueprints for existing systems.</li>
+<li><strong>Extracting business knowledge from code</strong>. Through AST analysis and other methods, AI can interpret business logic in existing code and rewrite based on it.</li>
+<li><strong>Cross-language translation</strong>. Unlike regular code generation, LLMs can effectively translate code into target languages within seconds to minutes.</li>
+<li><strong>Enhanced migration safety nets</strong>. Generating automated tests to validate migration correctness enables precise regression testing (Note: Frontend implementations still have limitations).</li>
+<li>......</li>
+</ul>
+<p>Therefore, we only need to focus on two key considerations:</p>
+<ul>
+<li>How can AI better understand legacy systems with tool assistance?</li>
+<li>How to reduce migration risks?</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="how-does-autodev-bridge-accelerate-legacy-system-migration">How Does AutoDev Bridge Accelerate Legacy System Migration?<a href="https://ide.unitmesh.cc/en/blog/2025/03/06/autodev-bridge#how-does-autodev-bridge-accelerate-legacy-system-migration" class="hash-link" aria-label="Direct link to How Does AutoDev Bridge Accelerate Legacy System Migration?" title="Direct link to How Does AutoDev Bridge Accelerate Legacy System Migration?">​</a></h2>
+<p>Based on our understanding of legacy system migration, we designed the initial implementation of AutoDev Bridge, which primarily includes:</p>
+<ul>
+<li>LLM-generated migration plans (Following the "Explore-Sense-Respond" framework)</li>
+<li>Current architecture analysis based on C4 model (Using AI tool invocations)</li>
+<li>Business logic analysis combining AST and call chains (AI code comprehension)</li>
+<li>Migration test case generation</li>
+<li>AI-assisted code translation</li>
+<li>......</li>
+</ul>
+<p>Through tight integration with IDEs, AutoDev Bridge can obtain highly accurate development context to further reduce AI hallucinations.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="explore-sense-respond-llm-generated-migration-plans">Explore-Sense-Respond: LLM-Generated Migration Plans<a href="https://ide.unitmesh.cc/en/blog/2025/03/06/autodev-bridge#explore-sense-respond-llm-generated-migration-plans" class="hash-link" aria-label="Direct link to Explore-Sense-Respond: LLM-Generated Migration Plans" title="Direct link to Explore-Sense-Respond: LLM-Generated Migration Plans">​</a></h3>
+<p>Historically, we categorized legacy system migration as a complex problem in the Cynefin framework - where outcomes cannot be predicted and must be discovered through practice. Drawing from Cynefin philosophy, we designed AutoDev Bridge's cognitive framework: Explore first, then Sense, then Respond. Since we expect models to have a blueprint (C4 model) before taking action, we divide the process into three phases:</p>
+<ul>
+<li><strong>Explore</strong>: Obtain basic system information through initial tool invocations (directory structures, dependencies, etc.)</li>
+<li><strong>Sense</strong>: Generate preliminary architectural blueprints and migration plans based on exploration results</li>
+<li><strong>Respond</strong>: Validate migration plans, generate migration test cases, and produce migration code</li>
+</ul>
+<p>Adapted for domestic model capabilities, this process would utilize V3 for exploration, R1 for plan design, and V3 for response.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="architecture-view-oriented-tool-design">Architecture View-Oriented Tool Design<a href="https://ide.unitmesh.cc/en/blog/2025/03/06/autodev-bridge#architecture-view-oriented-tool-design" class="hash-link" aria-label="Direct link to Architecture View-Oriented Tool Design" title="Direct link to Architecture View-Oriented Tool Design">​</a></h3>
+<p>To help AI better understand system architectures, we designed a series of architecture view-oriented tools.</p>
+<table><thead><tr><th>Tool Name (name)</th><th>Description (desc)</th></tr></thead><tbody><tr><td>componentView</td><td>List all UI components in the current project (React, Vue components, etc.)</td></tr><tr><td>containerView</td><td>List all modules in the current project</td></tr><tr><td>webApiView</td><td>List all Web APIs in the current project</td></tr><tr><td>stylingView</td><td>List all CSS/SCSS classes in the current project</td></tr><tr><td>dir</td><td>Get directory structure of current hierarchy</td></tr><tr><td>history</td><td>Retrieve historical commit information of current file</td></tr><tr><td>knowledge</td><td>Analyze API call chains with default depth=2 (unmodifiable), i.e., Controller-to-Repository call chains</td></tr></tbody></table>
+<p>Note: Current implementations show DeepSeek still struggles to fully comprehend C4 models, requiring further optimization.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="business-knowledge-extraction-and-comprehension">Business Knowledge Extraction and Comprehension<a href="https://ide.unitmesh.cc/en/blog/2025/03/06/autodev-bridge#business-knowledge-extraction-and-comprehension" class="hash-link" aria-label="Direct link to Business Knowledge Extraction and Comprehension" title="Direct link to Business Knowledge Extraction and Comprehension">​</a></h3>
+<p>For business logic analysis, we primarily rely on API AST and call chain analysis. First obtain all APIs through <code>webApiView</code>, then retrieve API call chains via <code>knowledge</code>. Example:</p>
+<div class="language-devin codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-devin codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">/knowledge:GET#/api/blog/*</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>With Controller-to-Repository call chains, AI can effectively understand the business logic behind APIs.</p>
+<p>Of course, this is a simplified example. In practice, AI needs to combine search tools to acquire additional context.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="conclusion">Conclusion<a href="https://ide.unitmesh.cc/en/blog/2025/03/06/autodev-bridge#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion">​</a></h2>
+<p>As our research progresses, we will continue refining this solution to achieve better automated migration capabilities.</p>
+<p>Follow our progress on GitHub: <a href="https://github.com/unit-mesh/auto-dev" target="_blank" rel="noopener noreferrer">https://github.com/unit-mesh/auto-dev</a></p>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[AutoDev Composer：the Intellij IDEA Cursor Alternative]]></title>
+            <link>https://ide.unitmesh.cc/en/blog/2025/01/11/autodev-2-0-preview</link>
+            <guid>https://ide.unitmesh.cc/en/blog/2025/01/11/autodev-2-0-preview</guid>
+            <pubDate>Sat, 11 Jan 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[A little over two weeks ago, after the release of DeepSeek V3, we introduced multi-file editing capabilities for Shire.]]></description>
+            <content:encoded><![CDATA[<p>A little over two weeks ago, after the release of DeepSeek V3, we introduced multi-file editing capabilities for Shire.</p>
+<p>Following extensive testing, we discovered that DeepSeek V3 performs exceptionally well in programming scenarios,
+especially in multi-file editing contexts.</p>
+<p>This inspired us to add a new feature—<strong>AutoDev Composer</strong>—to AutoDev, which had long lacked major updates. In
+developing this feature, we drew inspiration from a number of mature tools:</p>
+<ul>
+<li>The impressive <strong>Sketch rendering mechanism</strong> on Shire</li>
+<li>Complex <strong>system prompts</strong> from tools like Cursor and WindSurf</li>
+<li>The bug-ridden <strong>StreamDiff mode</strong> from Continue</li>
+<li>…and more</li>
+</ul>
+<p>Now, there’s no need to switch to a VSCode-like IDE to craft prompts and then return to IntelliJ IDEA for debugging.
+With AutoDev Composer, you can handle everything directly within IntelliJ IDEA.</p>
+<p>As an amateur project, we’ve put in a lot of effort to make this happen! 😊</p>
+<p>Introduction paragraph text here.</p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="decoding-autodev-composer-system-prompts"><strong>Decoding AutoDev Composer System Prompts</strong><a href="https://ide.unitmesh.cc/en/blog/2025/01/11/autodev-2-0-preview#decoding-autodev-composer-system-prompts" class="hash-link" aria-label="Direct link to decoding-autodev-composer-system-prompts" title="Direct link to decoding-autodev-composer-system-prompts">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="project-context"><strong>Project Context</strong><a href="https://ide.unitmesh.cc/en/blog/2025/01/11/autodev-2-0-preview#project-context" class="hash-link" aria-label="Direct link to project-context" title="Direct link to project-context">​</a></h4>
+<p>In Composer mode, you can still experience our understanding of software engineering and our extensive expertise in
+software component analysis. Below is the basic contextual prompt for AutoDev Composer:</p>
+<div class="language-markdown codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-markdown codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token list punctuation" style="color:#393A34">-</span><span class="token plain"> The USER's OS version is Mac OS X 15.2 x86_64</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token list punctuation" style="color:#393A34">-</span><span class="token plain"> The absolute path of the USER's workspaces is: /Users/phodal/IdeaProjects/untitled</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token list punctuation" style="color:#393A34">-</span><span class="token plain"> This workspace uses Gradle and Java JDK_11</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token list punctuation" style="color:#393A34">-</span><span class="token plain"> The user's shell is /bin/bash</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token list punctuation" style="color:#393A34">-</span><span class="token plain"> User's workspace context is: This project uses MariaDB 11.5.2-MariaDB, Spring Boot 2.7.10, Spring MVC, and JDBC to</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  build RESTful APIs.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token list punctuation" style="color:#393A34">-</span><span class="token plain"> Current time is: 2025-01-20 11:23:59  </span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>We gather system, workspace, toolchain, database, and language environment information to help you work more
+efficiently. For example, when writing CRUD code, AutoDev generates corresponding code based on your database
+information.</p>
+<hr>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="tool-context"><strong>Tool Context</strong><a href="https://ide.unitmesh.cc/en/blog/2025/01/11/autodev-2-0-preview#tool-context" class="hash-link" aria-label="Direct link to tool-context" title="Direct link to tool-context">​</a></h4>
+<p>Unlike FunctionTool, we firmly believe that DSLs (Domain-Specific Languages) are the best approach for generative AI
+solutions. Therefore, AutoDev adopts a DevIns DSL tool-calling mechanism:</p>
+<div class="language-markdown codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-markdown codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">tool</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">name: file, desc: Read the content of a file by project relative path, example:  </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">devin</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">  </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Locate a specific file (the file must exist in the specified path)  </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">/file:.github/dependabot.yml#L1C1-L2C12  </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Search globally by file name (case-sensitive, no path required)  </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">/file:PythonFrameworkContextProvider.kt  </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">devin</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">  </span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Since the tool’s documentation is part of the code and test suite, it allows for the generation of precise and reliable
+prompts.</p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="thought-process"><strong>Thought Process</strong><a href="https://ide.unitmesh.cc/en/blog/2025/01/11/autodev-2-0-preview#thought-process" class="hash-link" aria-label="Direct link to thought-process" title="Direct link to thought-process">​</a></h3>
+<p>Given the complexity of the AutoDev DSL tools, we referenced WindSurf’s prompt generation approach and introduced a
+step-by-step <strong>thought process</strong>:</p>
+<div class="language-markdown codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-markdown codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token title important punctuation" style="color:#393A34">#</span><span class="token title important"> Step 1. Create `routes.py`</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">I’ve created </span><span class="token code-snippet code keyword" style="color:#00009f">`routes.py`</span><span class="token plain"> to define the </span><span class="token code-snippet code keyword" style="color:#00009f">`/upload`</span><span class="token plain"> and </span><span class="token code-snippet code keyword" style="color:#00009f">`/query`</span><span class="token plain"> endpoints. Additionally, I’ve added </span><span class="token code-snippet code keyword" style="color:#00009f">`/`</span><span class="token plain"> as the endpoint</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">for </span><span class="token code-snippet code keyword" style="color:#00009f">`main.html`</span><span class="token plain">.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token title important punctuation" style="color:#393A34">#</span><span class="token title important"> Step 2. Create `main.js`</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">I’ve created a dedicated </span><span class="token code-snippet code keyword" style="color:#00009f">`main.js`</span><span class="token plain"> file to store all the interactive front-end code. It defines UI elements for</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">displaying windows and buttons and creates event listeners for these buttons.  </span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>This allows us to provide additional examples for the AI model, which has proven to learn remarkably well.</p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="autodev-developer-experience-sketch-mode"><strong>AutoDev Developer Experience: Sketch Mode</strong><a href="https://ide.unitmesh.cc/en/blog/2025/01/11/autodev-2-0-preview#autodev-developer-experience-sketch-mode" class="hash-link" aria-label="Direct link to autodev-developer-experience-sketch-mode" title="Direct link to autodev-developer-experience-sketch-mode">​</a></h3>
+<p>Although AutoDev is now an amateur project, we firmly believe that understanding developer experience is at the core of
+AI-assisted development. For this reason, we’ve introduced Sketch mode from Shire’s intelligent agent language into
+AutoDev Composer. With Sketch, you can transform code into <em>everything</em>.</p>
+<p>Simply put, Markdown is rendered with various UIs to enable better interactivity.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="diff-sketch-mode"><strong>Diff Sketch Mode</strong><a href="https://ide.unitmesh.cc/en/blog/2025/01/11/autodev-2-0-preview#diff-sketch-mode" class="hash-link" aria-label="Direct link to diff-sketch-mode" title="Direct link to diff-sketch-mode">​</a></h4>
+<p>With Diff Sketch mode, you can quickly understand AI-generated code changes and decide how to handle them: view the
+source file, examine the diff, or apply the changes directly.</p>
+<p>Since we currently lack the capacity to offer a diff model like Cursor, we’ve implemented a repair model. When patches
+cannot be accurately identified, the model is called again for corrections.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="terminal-sketch-mode"><strong>Terminal Sketch Mode</strong><a href="https://ide.unitmesh.cc/en/blog/2025/01/11/autodev-2-0-preview#terminal-sketch-mode" class="hash-link" aria-label="Direct link to terminal-sketch-mode" title="Direct link to terminal-sketch-mode">​</a></h4>
+<p>In AutoDev, the Terminal Sketch mode allows you to execute scripts or pop out a terminal (similar to Cursor), enabling
+you to run commands and view the results conveniently.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="mermaid-and-plantuml-sketch-modes"><strong>Mermaid and PlantUML Sketch Modes</strong><a href="https://ide.unitmesh.cc/en/blog/2025/01/11/autodev-2-0-preview#mermaid-and-plantuml-sketch-modes" class="hash-link" aria-label="Direct link to mermaid-and-plantuml-sketch-modes" title="Direct link to mermaid-and-plantuml-sketch-modes">​</a></h4>
+<p>When you install the Mermaid or PlantUML plugins, you can use their respective Sketch modes to convert your code into
+flowcharts, sequence diagrams, and more.</p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="other"><strong>Other</strong><a href="https://ide.unitmesh.cc/en/blog/2025/01/11/autodev-2-0-preview#other" class="hash-link" aria-label="Direct link to other" title="Direct link to other">​</a></h3>
+<p><strong>Download and try it out:</strong><br>
+<a href="https://github.com/unit-mesh/auto-dev/releases" target="_blank" rel="noopener noreferrer">https://github.com/unit-mesh/auto-dev/releases</a></p>
+<hr>
+<p>`</p>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Agent Language - DevIns]]></title>
+            <link>https://ide.unitmesh.cc/en/blog/2024/03/17/autodev-devins-language</link>
+            <guid>https://ide.unitmesh.cc/en/blog/2024/03/17/autodev-devins-language</guid>
+            <pubDate>Sun, 17 Mar 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[In the previous version, we built AutoDev's custom Agent functionality, allowing users to create their own intelligent agents through custom capabilities to provide intelligent assistance for software development tasks.]]></description>
+            <content:encoded><![CDATA[<p>In the previous version, we built AutoDev's custom Agent functionality, allowing users to create their own intelligent agents through custom capabilities to provide intelligent assistance for software development tasks.<br>
+<!-- -->In this version, we are introducing a new AI Agent language: DevIns (Development Instruction). DevIns enables users to describe software development tasks more efficiently while automatically processing content returned from AI Agents.</p>
+<p>Introduction paragraph text here.</p>
+<p>For example: <code>/write:README.md\n```\n# Hello, World!```\n"</code> will be translated and executed by AutoDev, writing <code># Hello, World!</code> to the <code>README.md</code> file. Additionally, this version of DevIns can execute patches, commit code, and run tests.</p>
+<p>Note: It was originally named DevIn, but after the Devin AI project released its demo video, we renamed it to DevIns.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="why-devins">Why DevIns?<a href="https://ide.unitmesh.cc/en/blog/2024/03/17/autodev-devins-language#why-devins" class="hash-link" aria-label="Direct link to Why DevIns?" title="Direct link to Why DevIns?">​</a></h2>
+<p>In the AutoDev project, we achieve intelligent assistance for software development tasks through <strong>context-aware building</strong> and <strong>custom capabilities</strong>, such as automated test generation/execution and UI auto-generation. As we developed more agents in AutoDev, we observed that all interactions with the model occurred through <strong>instruction text</strong>. Users interact with agents via instruction text, and agents return content to operate editors or IDEs.</p>
+<p>For instance, in AutoDev's custom prompts, we can use: <code>Explain selected code: $selection</code> to have AI interpret the selected code, where "Explain" functions as an instruction.</p>
+<p>This led us to consider: Can we interact with agents using <strong>natural language</strong>? Users could describe requirements in natural language, while models could return corresponding instruction text to operate editors/IDEs, thereby automating software development assistance.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-is-devins-language">What is DevIns Language?<a href="https://ide.unitmesh.cc/en/blog/2024/03/17/autodev-devins-language#what-is-devins-language" class="hash-link" aria-label="Direct link to What is DevIns Language?" title="Direct link to What is DevIns Language?">​</a></h2>
+<blockquote>
+<p>DevIns is an interactive language bridging natural language and instruction text, where natural language describes development tasks and instruction text interacts with agents/IDEs.</p>
+</blockquote>
+<p>Simply put, DevIns is an interactive, compilable, and executable textual language. You can use DevIns to describe software development tasks (e.g., code analysis, code generation, test execution), then run it. The DevIns compiler will generate corresponding instruction text based on your commands, send it to agents, and execute operations on editors/IDEs based on returned results.</p>
+<p>You can describe requirements in natural language:</p>
+<div class="language-devin codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-devin codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Explain code /file:src/main/java/com/example/Controller.java</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>AutoDev will then combine context and compile it into instruction text, reading the <code>src/main/java/com/example/Controller.java</code> file contents.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="devins-agent-commands">DevIns Agent Commands<a href="https://ide.unitmesh.cc/en/blog/2024/03/17/autodev-devins-language#devins-agent-commands" class="hash-link" aria-label="Direct link to DevIns Agent Commands" title="Direct link to DevIns Agent Commands">​</a></h3>
+<p>Beyond basic file reading, code modification, and custom variables, DevIns supports more commands like writing files, running tests, and committing code. Predefined commands enable operations such as:</p>
+<ul>
+<li><code>/write</code> manipulates code with path information</li>
+<li><code>/run</code> executes corresponding tests</li>
+<li><code>/patch</code> applies patches based on AI responses</li>
+<li><code>/commit</code> submits code</li>
+</ul>
+<p>Example generation content:</p>
+<p>/write<!-- -->:src<!-- -->/main/java/com/example/Controller.java#L1-L5</p>
+<div class="language-java codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-java codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">public class Controller {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    public void method() {</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        System.out.println("Hello, World!");</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    }</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Details: <a href="https://ide.unitmesh.cc/devins" target="_blank" rel="noopener noreferrer">https://ide.unitmesh.cc/devins</a></p>
+<p>Don't worry about command complexity - our extensive IDE development experience enables DevIns to provide "extremely" powerful interactive capabilities: intelligent completion and hints.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="using-devins-in-ide">Using DevIns in IDE<a href="https://ide.unitmesh.cc/en/blog/2024/03/17/autodev-devins-language#using-devins-in-ide" class="hash-link" aria-label="Direct link to Using DevIns in IDE" title="Direct link to Using DevIns in IDE">​</a></h3>
+<p>After installing AutoDev 1.7.2 plugin, create a <code>hello.devins</code> file to start writing DevIns commands, then click Run. As shown:</p>
+<p><img decoding="async" loading="lazy" src="https://unitmesh.cc/auto-dev/autodev-devins.png" alt="AutoDev DevIns" class="img_ev3q"></p>
+<p>It's that simple.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="why-the-name-devins">Why the Name DevIns?<a href="https://ide.unitmesh.cc/en/blog/2024/03/17/autodev-devins-language#why-the-name-devins" class="hash-link" aria-label="Direct link to Why the Name DevIns?" title="Direct link to Why the Name DevIns?">​</a></h2>
+<p>When designing this language weeks ago, we intended the name as "AutoDev Input Language" (DevIn). We found no similar projects during initial searches. However, as we approached release, the Devin AI project's demo video went viral on social media.</p>
+<p>WTF????</p>
+<p>Given the similarity, we renamed it to DevIns (Development Instruction). Renaming involved significant code changes, documentation updates (though minimal), and adjustments for JetBrains marketplace/repositories. Due to JetBrains review mechanisms, the default file extension remains <code>.devin</code> (not yet changed to <code>.devins</code>) - we simply couldn't make all the changes.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="next-steps">Next Steps<a href="https://ide.unitmesh.cc/en/blog/2024/03/17/autodev-devins-language#next-steps" class="hash-link" aria-label="Direct link to Next Steps" title="Direct link to Next Steps">​</a></h2>
+<p>In upcoming versions, we plan to:</p>
+<ol>
+<li>Enhance DevIns language-agent interaction (Jupyter Notebook-style?)</li>
+<li>Develop more agents leveraging AutoDev's custom Agent capabilities</li>
+<li>Design richer DevIns commands for broader AI-powered development tasks</li>
+<li>Build cross-platform DevIns compiler</li>
+</ol>
+<p>We welcome community contributions and suggestions.</p>
+<p>`</p>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[AutoDev 1.7.0 AutoDev AI Agent]]></title>
+            <link>https://ide.unitmesh.cc/en/blog/2024/03/07/autodev-1-7-0</link>
+            <guid>https://ide.unitmesh.cc/en/blog/2024/03/07/autodev-1-7-0</guid>
+            <pubDate>Thu, 07 Mar 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[In the #51 issue of the open-source AI IDE plugin AutoDev, we designed the AI Agent capability for AutoDev. Half a year later, we have finally delivered this feature.]]></description>
+            <content:encoded><![CDATA[<p>In the <a href="https://github.com/unit-mesh/auto-dev/issues/51" target="_blank" rel="noopener noreferrer">#51</a> issue of the open-source AI IDE plugin AutoDev, we designed the AI Agent capability for AutoDev. Half a year later, we have finally delivered this feature.</p>
+<p>In AutoDev 1.7.0, you can now integrate internal AI Agents and seamlessly combine them with existing AI-assisted capabilities.</p>
+<p>Introduction paragraph text here.</p>
+<p>This article will demonstrate how to use AutoDev's Agent capabilities through a demo combining AI Agents. For details, see the documentation: <a href="https://ide.unitmesh.cc/agent/agent.html" target="_blank" rel="noopener noreferrer">https://ide.unitmesh.cc/agent/agent.html</a>, or refer to the source code.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="custom-ai-agent">Custom AI Agent<a href="https://ide.unitmesh.cc/en/blog/2024/03/07/autodev-1-7-0#custom-ai-agent" class="hash-link" aria-label="Direct link to Custom AI Agent" title="Direct link to Custom AI Agent">​</a></h2>
+<p>Background: As we know, general-purpose large language models lack internal reference materials, requiring RAG extensions. In scenarios where our documentation might be constantly updated, implementing similar functionality directly on the IDE is impractical. Therefore, we should implement such capabilities on the server side and expose interfaces to the IDE.</p>
+<p>Based on our previous experience with custom LLM implementations, we designed AutoDev's custom AI Agent capability to facilitate...</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="1-direct-response-example-internal-api-integration">1. Direct Response Example: Internal API Integration<a href="https://ide.unitmesh.cc/en/blog/2024/03/07/autodev-1-7-0#1-direct-response-example-internal-api-integration" class="hash-link" aria-label="Direct link to 1. Direct Response Example: Internal API Integration" title="Direct link to 1. Direct Response Example: Internal API Integration">​</a></h2>
+<p>Typical scenarios:</p>
+<ul>
+<li>When models lack specific knowledge. For example, when learning HarmonyOS application development, internal APIs can be deployed to accelerate learning.</li>
+<li>Internal knowledge. When dealing with extensive domain knowledge, specifications, or API information.</li>
+</ul>
+<p>In these scenarios, use <code>Direct</code> as the response type to integrate corresponding AI Agents. Configuration example:</p>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">"name"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"Internal API Integration"</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">"url"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"http://127.0.0.1:8765/api/agent/api-market"</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">"responseAction"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"Direct"</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>This configuration directly returns and processes the content.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="2-retrieval-result-example-component-library-integration">2. Retrieval Result Example: Component Library Integration<a href="https://ide.unitmesh.cc/en/blog/2024/03/07/autodev-1-7-0#2-retrieval-result-example-component-library-integration" class="hash-link" aria-label="Direct link to 2. Retrieval Result Example: Component Library Integration" title="Direct link to 2. Retrieval Result Example: Component Library Integration">​</a></h2>
+<p>Typical scenarios:</p>
+<ul>
+<li>Knowledge retrieval. When needing specific categories of knowledge for further communication. For example, requiring AI to select appropriate components while possessing all component information for subsequent coding.</li>
+</ul>
+<p>In these scenarios, use <code>TextChunk</code> as the response type. Configuration example:</p>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">"name"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"Component Query"</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">"url"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"http://127.0.0.1:8765/api/agent/component-list"</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">"responseAction"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"TextChunk"</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Here, the AI returns search results that can be used for subsequent conversations.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="3-webview-result-example-low-code-page-generation">3. WebView Result Example: Low-code Page Generation<a href="https://ide.unitmesh.cc/en/blog/2024/03/07/autodev-1-7-0#3-webview-result-example-low-code-page-generation" class="hash-link" aria-label="Direct link to 3. WebView Result Example: Low-code Page Generation" title="Direct link to 3. WebView Result Example: Low-code Page Generation">​</a></h2>
+<p>Typical scenarios:</p>
+<ul>
+<li>Frontend page generation</li>
+<li>Low-code page generation</li>
+</ul>
+<p>These similar scenarios often require integration with internal component libraries or RAG due to frequent issues in AI-generated frontend code. However, directly generating prototypes through AI for discussion among product managers, UX designers, and developers proves more valuable.</p>
+<p>In these scenarios, use <code>WebView</code> as the response type. Configuration example:</p>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">"name"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"Page Generation"</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">"url"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"http://127.0.0.1:8765/api/agent/ux"</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">"auth"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">"type"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"Bearer"</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">"token"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"eyJhbGci"</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">"responseAction"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"WebView"</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>This configuration returns results in WebView format, which will be displayed in the chat interface.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="summary">Summary<a href="https://ide.unitmesh.cc/en/blog/2024/03/07/autodev-1-7-0#summary" class="hash-link" aria-label="Direct link to Summary" title="Direct link to Summary">​</a></h2>
+<p>Within the IDE, we can treat AI Agents as a series of capability plugins to accelerate our development process.</p>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[AutoDev 1.6.4 Enhanced Development Experience for HarmonyOS Applications]]></title>
+            <link>https://ide.unitmesh.cc/en/blog/2024/02/25/autodev-1-6-4</link>
+            <guid>https://ide.unitmesh.cc/en/blog/2024/02/25/autodev-1-6-4</guid>
+            <pubDate>Sun, 25 Feb 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Generative AI holds tremendous potential in software development and knowledge management, which is why this technology is being increasingly adopted by enterprises. Emerging technologies like the HarmonyOS operating system introduce new concepts, development tools like DevEco Studio, the ArkTS language, and the ArkUI framework. In terms of implementation patterns, its integration with generative AI closely resembles the process of combining AI with enterprise infrastructure.]]></description>
+            <content:encoded><![CDATA[<p>Generative AI holds tremendous potential in software development and knowledge management, which is why this technology is being increasingly adopted by enterprises. Emerging technologies like the HarmonyOS operating system introduce new concepts, development tools like DevEco Studio, the ArkTS language, and the ArkUI framework. In terms of implementation patterns, its integration with generative AI closely resembles the process of combining AI with enterprise infrastructure.</p>
+<p>Therefore, we began exploring possibilities in AutoDev to integrate these new knowledge domains while reducing developers' learning burden.</p>
+<p>Source code: <a href="https://github.com/unit-mesh/auto-dev" target="_blank" rel="noopener noreferrer">https://github.com/unit-mesh/auto-dev</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="three-experimental-features-for-harmonyos--generative-ai">Three Experimental Features for HarmonyOS + Generative AI<a href="https://ide.unitmesh.cc/en/blog/2024/02/25/autodev-1-6-4#three-experimental-features-for-harmonyos--generative-ai" class="hash-link" aria-label="Direct link to Three Experimental Features for HarmonyOS + Generative AI" title="Direct link to Three Experimental Features for HarmonyOS + Generative AI">​</a></h2>
+<p>After initial discussions with the HarmonyOS team about their self-developed tools, we identified three experimental directions for AutoDev:</p>
+<ul>
+<li>Add ArkTS support. ArkTS is an application development language based on TypeScript extensions in the HarmonyOS ecosystem.</li>
+<li>Automatic ArkUI page generation. ArkUI is a declarative UI development framework for building distributed application interfaces. It shares similarities with our existing AutoPage feature and can generate code/UI through chain-of-thought reasoning.</li>
+<li>UI layout migration. Converting code from other languages/frameworks into HarmonyOS-compatible code using generative AI.</li>
+</ul>
+<p>As someone who has studied Gradle, Intellij Community, DevEco Studio source code, and authored "Frontend Architecture: From Basics to Micro Frontends", I possess relevant experience with TypeScript, ArkUI, and declarative UIs. Thus, I confidently embarked on developing new AutoDev features - only to encounter numerous challenges.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="1-ai-support-for-arkts-language">1. AI Support for ArkTS Language<a href="https://ide.unitmesh.cc/en/blog/2024/02/25/autodev-1-6-4#1-ai-support-for-arkts-language" class="hash-link" aria-label="Direct link to 1. AI Support for ArkTS Language" title="Direct link to 1. AI Support for ArkTS Language">​</a></h2>
+<p>After installing DevEco Studio, I discovered AutoDev didn't support TypeScript??? After testing in WebStorm, I realized the IDE difference. Using the PSIViewer plugin, I found DevEco Studio implements its own JavaScript/TypeScript PSI, e.g., <code>com.huawei.ace.language.psi.impl.JavaScriptIdentifierNameImpl</code>.</p>
+<p>The reasons are apparent:</p>
+<ul>
+<li>The JavaScript plugin for IntelliJ platform is proprietary.</li>
+<li>Extending TypeScript syntax directly would be simpler than creating a new language.</li>
+</ul>
+<p>Thus, DevEco Studio developed custom JavaScript/TypeScript modules supporting syntax highlighting, code completion, and formatting. It also introduced the ArkTS language as a TypeScript extension.</p>
+<p>This means three new file types appear in DevEco Studio + AutoDev:</p>
+<ul>
+<li>Huawei JavaScript</li>
+<li>Huawei TypeScript</li>
+<li>Huawei ArkTS</li>
+</ul>
+<p>Headache...</p>
+<p>Our solution in AutoDev involves preliminary abstraction based on standard PSI to support documentation generation. A more robust approach would require:</p>
+<ol>
+<li>Reusing JavaScript PSI through reflection</li>
+<li>Integrating DevEco Studio's JavaScript support</li>
+</ol>
+<p>Considering debugging complexity and existing xxStudio code references, we temporarily abandoned this approach - assuming HarmonyOS IDEs will eventually provide their own AI capabilities.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="2-autoarkui-rag-enhanced-arkui-code-generation">2. AutoArkUI: RAG-enhanced ArkUI Code Generation<a href="https://ide.unitmesh.cc/en/blog/2024/02/25/autodev-1-6-4#2-autoarkui-rag-enhanced-arkui-code-generation" class="hash-link" aria-label="Direct link to 2. AutoArkUI: RAG-enhanced ArkUI Code Generation" title="Direct link to 2. AutoArkUI: RAG-enhanced ArkUI Code Generation">​</a></h2>
+<blockquote>
+<p>ArkUI is a declarative UI development framework for building distributed application interfaces.</p>
+</blockquote>
+<p>Compared with ArkTS, integrating ArkUI presents more complexity. The current version focuses on generating pages using classic UI elements:</p>
+<ul>
+<li>Layouts: Row, Column, Stack, Flex, etc.</li>
+<li>Components: Button, Radio, Toggle, etc.</li>
+</ul>
+<p>Since ChatGPT lacks knowledge of HarmonyOS updates, we adopted a two-step generation approach similar to AutoPage:</p>
+<ol>
+<li>Analyze user requirements to select appropriate layouts and components</li>
+<li>Generate corresponding ArkUI code based on detailed layout/component information</li>
+</ol>
+<p>This process constitutes AutoDev's AutoArkUI feature. The step 1 prompt example:</p>
+<ul>
+<li>User: // maybe send Android Layout code, maybe some requirements</li>
+<li>Your Answer: [FlexLayout, Button, CheckBox, Checkbox, Button]</li>
+</ul>
+<p>Considering programming DSLs' sensitivity to natural language, we use English prompts to avoid generating Chinese DSLs.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="3-migrating-androidiosmini-program-applications">3. Migrating Android/iOS/Mini-Program Applications<a href="https://ide.unitmesh.cc/en/blog/2024/02/25/autodev-1-6-4#3-migrating-androidiosmini-program-applications" class="hash-link" aria-label="Direct link to 3. Migrating Android/iOS/Mini-Program Applications" title="Direct link to 3. Migrating Android/iOS/Mini-Program Applications">​</a></h2>
+<p>Generative AI demonstrates excellent code translation capabilities, as seen in IBM's COBOL-to-Java conversions and AutoDev's legacy system modernization features.</p>
+<p>We've implemented layout migration support in AutoDev, though current limitations exist:</p>
+<ul>
+<li>Android layout conversion often produces errors</li>
+<li>Need for better static code analysis integration</li>
+<li>Merged functionality with AutoArkUI requires refinement</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="4-rag-enhanced-chat-context-c-napi-etc">4. RAG-enhanced Chat Context: C++ NAPI etc.<a href="https://ide.unitmesh.cc/en/blog/2024/02/25/autodev-1-6-4#4-rag-enhanced-chat-context-c-napi-etc" class="hash-link" aria-label="Direct link to 4. RAG-enhanced Chat Context: C++ NAPI etc." title="Direct link to 4. RAG-enhanced Chat Context: C++ NAPI etc.">​</a></h2>
+<p>Through experimentation, we observed ChatGPT's lack of HarmonyOS knowledge. Thus, we implemented HarmonyOS-specific context in AutoDev 1.6.4:</p>
+<ul>
+<li>Basic declaration: <code>This project is a HarmonyOS project.</code></li>
+<li>Language-specific contexts:<!-- -->
+<ul>
+<li>TypeScript/ArkTS: "Uses Flutter-like declarative UI framework"</li>
+<li>C++: "Uses NAPI for building native Addons"</li>
+</ul>
+</li>
+</ul>
+<p>This helps guide AI:</p>
+<ul>
+<li>For frontend code: Consider Flutter-like declarative UI patterns</li>
+<li>For native code: Consider NAPI-based plugin architecture</li>
+</ul>
+<p>These contexts are based on preliminary understanding and require refinement.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="future-directions">Future Directions<a href="https://ide.unitmesh.cc/en/blog/2024/02/25/autodev-1-6-4#future-directions" class="hash-link" aria-label="Direct link to Future Directions" title="Direct link to Future Directions">​</a></h2>
+<p>Current limitations (implemented within hours):</p>
+<ul>
+<li>Android layout conversion inaccuracies</li>
+<li>Hardcoded component/layout information</li>
+<li>Lack of dynamically generated sample codes</li>
+<li>Incomplete C++ support</li>
+<li>Mini-program platform conversions</li>
+</ul>
+<p>As I'm not an expert in Android/mini-program migration to HarmonyOS, challenges remain. Future improvements depend on motivation to develop more interesting features.</p>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[AutoDev 1.6.0 - Precise Page Generation and SQL Generation]]></title>
+            <link>https://ide.unitmesh.cc/en/blog/2024/01/26/autodev-1-6-0</link>
+            <guid>https://ide.unitmesh.cc/en/blog/2024/01/26/autodev-1-6-0</guid>
+            <pubDate>Fri, 26 Jan 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Introduction paragraph text here.]]></description>
+            <content:encoded><![CDATA[<p>Introduction paragraph text here.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="autopage-precise-page-generation">AutoPage: Precise Page Generation<a href="https://ide.unitmesh.cc/en/blog/2024/01/26/autodev-1-6-0#autopage-precise-page-generation" class="hash-link" aria-label="Direct link to AutoPage: Precise Page Generation" title="Direct link to AutoPage: Precise Page Generation">​</a></h2>
+<p>In version 1.6.0, we introduce precise page generation capabilities specifically for the React framework. When generating pages, the system now produces corresponding page components based on contextual requirements.</p>
+<p>For details, see: <a href="https://ide.unitmesh.cc/workflow/auto-page.html" target="_blank" rel="noopener noreferrer">https://ide.unitmesh.cc/workflow/auto-page.html</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="autosql-precise-sql-generation">AutoSQL: Precise SQL Generation<a href="https://ide.unitmesh.cc/en/blog/2024/01/26/autodev-1-6-0#autosql-precise-sql-generation" class="hash-link" aria-label="Direct link to AutoSQL: Precise SQL Generation" title="Direct link to AutoSQL: Precise SQL Generation">​</a></h2>
+<p>In version 1.6.0, we provide precise SQL generation capabilities. When generating SQL statements, the system now produces corresponding SQL queries based on contextual requirements.</p>
+<p>For details, see: <a href="https://ide.unitmesh.cc/workflow/auto-sql.html" target="_blank" rel="noopener noreferrer">https://ide.unitmesh.cc/workflow/auto-sql.html</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="prompt-override">Prompt Override<a href="https://ide.unitmesh.cc/en/blog/2024/01/26/autodev-1-6-0#prompt-override" class="hash-link" aria-label="Direct link to Prompt Override" title="Direct link to Prompt Override">​</a></h2>
+<p>The Prompt Override feature allows customizing your own prompts. For details, see: <a href="https://ide.unitmesh.cc/customize/prompt-override.html" target="_blank" rel="noopener noreferrer">https://ide.unitmesh.cc/customize/prompt-override.html</a></p>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[AutoDev 1.5.3 Precision Test Generation]]></title>
+            <link>https://ide.unitmesh.cc/en/blog/2024/01/12/autodev-1-5-3</link>
+            <guid>https://ide.unitmesh.cc/en/blog/2024/01/12/autodev-1-5-3</guid>
+            <pubDate>Fri, 12 Jan 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[At the beginning of last year, our original intention for open-sourcing AutoDev was:]]></description>
+            <content:encoded><![CDATA[<p>At the beginning of last year, our original intention for open-sourcing AutoDev was:</p>
+<blockquote>
+<p>AutoDev is an open-source AI-assisted programming plugin for JetBrains IDEs. It can directly integrate with your requirement management systems (such as Jira, Trello, Github Issues, etc.). Within the IDE, with simple clicks, AutoDev automatically generates code based on your requirements. All you need to do is perform quality checks on the generated code. @</p>
+</blockquote>
+<p>Today we've taken another step toward this goal: one-click generation of precision unit tests. In this article, we'll introduce features from version 1.4 (Team AI for teams) to version 1.5.3:</p>
+<ul>
+<li><strong>Precision automated test generation</strong>. Enhanced static code analysis for more accurate constructor generation; optimized prompts distinguishing testing approaches for Spring Controllers vs Services; added multiple test template types.</li>
+<li><strong>Local model enhancements</strong>. Provided AutoDev Coder dataset and models tailored for AutoDev; supported local data recording for knowledge distillation; allowed partial system prompt overriding for better custom model utilization.</li>
+<li><strong>Multi-language documentation</strong>. Added support for JavaScript, Rust, Python, and improved Kotlin documentation generation logic.</li>
+<li><strong>Automation workflow optimization</strong>. Introduced PrePush Review for AI-assisted code review before commit; streamlined commit message context with differentiated file/dependency change handling to reduce token usage.</li>
+</ul>
+<p>Join us at: <a href="https://github.com/unit-mesh/auto-dev/" target="_blank" rel="noopener noreferrer">https://github.com/unit-mesh/auto-dev/</a> to build your own AI-assisted full-cycle coding companion.</p>
+<p>During development, we selected ArchGuard - an open-source architecture governance platform built with Kotlin - as the pilot project for AutoDev's full-cycle AI assistance, continuously accumulating data and experience to better support Kotlin development.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="1-precision-test-generation">1. Precision Test Generation<a href="https://ide.unitmesh.cc/en/blog/2024/01/12/autodev-1-5-3#1-precision-test-generation" class="hash-link" aria-label="Direct link to 1. Precision Test Generation" title="Direct link to 1. Precision Test Generation">​</a></h2>
+<p>Drawing from experience generating 200+ tests across 90 test classes in ArchGuard, we've continuously optimized test generation logic (though some bugs may remain).</p>
+<p>AutoDev can now <strong>directly generate</strong> ready-to-use unit tests with certain probability.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="precise-context">Precise Context<a href="https://ide.unitmesh.cc/en/blog/2024/01/12/autodev-1-5-3#precise-context" class="hash-link" aria-label="Direct link to Precise Context" title="Direct link to Precise Context">​</a></h3>
+<p>Current version provides test context containing:</p>
+<ul>
+<li>Related class information</li>
+<li>Complete input/output class details</li>
+<li>Static analysis of Service-related information</li>
+<li>Function parameter/return type analysis</li>
+<li>Spring component detection (Controller/Service) with testing rule suggestions</li>
+</ul>
+<p>See implementations: <code>JavaTestContextProvider</code>, <code>KotlinTestContextProvider</code></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="unit-test-templates-team-ai">Unit Test Templates: Team AI<a href="https://ide.unitmesh.cc/en/blog/2024/01/12/autodev-1-5-3#unit-test-templates-team-ai" class="hash-link" aria-label="Direct link to Unit Test Templates: Team AI" title="Direct link to Unit Test Templates: Team AI">​</a></h3>
+<p>To handle project-specific requirements (like special annotations in ArchGuard), we introduced customizable test templates for Controllers, Services, and other components. Manage templates through prompt-as-code approach and share within teams.</p>
+<p>Documentation: <a href="https://ide.unitmesh.cc/customize/custom-test-template.html" target="_blank" rel="noopener noreferrer">https://ide.unitmesh.cc/customize/custom-test-template.html</a></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="accurate-api-test-data-generation">Accurate API Test Data Generation<a href="https://ide.unitmesh.cc/en/blog/2024/01/12/autodev-1-5-3#accurate-api-test-data-generation" class="hash-link" aria-label="Direct link to Accurate API Test Data Generation" title="Direct link to Accurate API Test Data Generation">​</a></h3>
+<p>Enhanced static analysis for API test data generation through <code>JavaTestDataBuilder</code> and <code>KotlinTestDataBuilder</code>.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="2-local-model-optimization">2. Local Model Optimization<a href="https://ide.unitmesh.cc/en/blog/2024/01/12/autodev-1-5-3#2-local-model-optimization" class="hash-link" aria-label="Direct link to 2. Local Model Optimization" title="Direct link to 2. Local Model Optimization">​</a></h2>
+<p>Configure private model settings via <code>AutoDev Coder</code> in plugin preferences:</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="public-model-knowledge-distillation">Public Model Knowledge Distillation<a href="https://ide.unitmesh.cc/en/blog/2024/01/12/autodev-1-5-3#public-model-knowledge-distillation" class="hash-link" aria-label="Direct link to Public Model Knowledge Distillation" title="Direct link to Public Model Knowledge Distillation">​</a></h3>
+<p>New <code>Recording Instruction In Local</code> feature enables:</p>
+<ul>
+<li>Recording AI interaction data</li>
+<li>Internal model fine-tuning samples</li>
+<li>AutoDev debugging support</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="plugin-prompt-overriding">Plugin Prompt Overriding<a href="https://ide.unitmesh.cc/en/blog/2024/01/12/autodev-1-5-3#plugin-prompt-overriding" class="hash-link" aria-label="Direct link to Plugin Prompt Overriding" title="Direct link to Plugin Prompt Overriding">​</a></h3>
+<p>Override core chat prompts:</p>
+<ul>
+<li>Explain code</li>
+<li>Refactor code</li>
+<li>Fix issue</li>
+<li>Generate test</li>
+</ul>
+<p>More context interfaces coming via template approach.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="3-multi-language-documentation">3. Multi-Language Documentation<a href="https://ide.unitmesh.cc/en/blog/2024/01/12/autodev-1-5-3#3-multi-language-documentation" class="hash-link" aria-label="Direct link to 3. Multi-Language Documentation" title="Direct link to 3. Multi-Language Documentation">​</a></h2>
+<p>Added documentation generation support for:</p>
+<ul>
+<li>Python</li>
+<li>Rust</li>
+<li>JavaScript</li>
+</ul>
+<p>Optimized Kotlin handling to prevent redundant function comments from OpenAI.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="4-automation-workflow-optimization">4. Automation Workflow Optimization<a href="https://ide.unitmesh.cc/en/blog/2024/01/12/autodev-1-5-3#4-automation-workflow-optimization" class="hash-link" aria-label="Direct link to 4. Automation Workflow Optimization" title="Direct link to 4. Automation Workflow Optimization">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="prepush-review">PrePush Review<a href="https://ide.unitmesh.cc/en/blog/2024/01/12/autodev-1-5-3#prepush-review" class="hash-link" aria-label="Direct link to PrePush Review" title="Direct link to PrePush Review">​</a></h3>
+<p>AI-assisted preliminary code review before commit.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="streamlined-commit-messages">Streamlined Commit Messages<a href="https://ide.unitmesh.cc/en/blog/2024/01/12/autodev-1-5-3#streamlined-commit-messages" class="hash-link" aria-label="Direct link to Streamlined Commit Messages" title="Direct link to Streamlined Commit Messages">​</a></h3>
+<p>Refined commit message generation through 167 real-world cases in ArchGuard, implementing token-efficient context handling.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="future-focus">Future Focus<a href="https://ide.unitmesh.cc/en/blog/2024/01/12/autodev-1-5-3#future-focus" class="hash-link" aria-label="Direct link to Future Focus" title="Direct link to Future Focus">​</a></h2>
+<ul>
+<li><strong>Enhanced workflow automation</strong>: Better forward/backward process integration</li>
+<li><strong>UX improvements</strong>: Loading states and error handling upgrades</li>
+<li><strong>Test coverage expansion</strong>: Adding more unit tests for stability</li>
+</ul>
+<p>Contribute at: <a href="https://github.com/unit-mesh/auto-dev/" target="_blank" rel="noopener noreferrer">https://github.com/unit-mesh/auto-dev/</a></p>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[AutoDev Coder]]></title>
+            <link>https://ide.unitmesh.cc/en/blog/autodev-coder</link>
+            <guid>https://ide.unitmesh.cc/en/blog/autodev-coder</guid>
+            <pubDate>Sun, 07 Jan 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[TL;DR:]]></description>
+            <content:encoded><![CDATA[<p>TL;DR:</p>
+<p>The first <strong>barely usable</strong> version of AutoDev Coder 6.7B, a coding LLM for AutoDev, is now available.</p>
+<ul>
+<li>HuggingFace homepage: <a href="https://huggingface.co/unit-mesh/autodev-coder" target="_blank" rel="noopener noreferrer">https://huggingface.co/unit-mesh</a> (temporarily unable to provide direct downloads due to certification requirements 🐶🐶).</li>
+<li>Dataset download: <a href="https://huggingface.co/datasets/unit-mesh/autodev-datasets" target="_blank" rel="noopener noreferrer">https://huggingface.co/datasets/unit-mesh/autodev-datasets</a></li>
+</ul>
+<p>PS: Since AutoDev 1.5.1 is awaiting approval on the JetBrains Marketplace and foreign colleagues are still on vacation after holidays, the model's performance on version 1.5.1 will be <strong>slightly</strong> better than on 1.5.0.</p>
+<p>Additionally, with improved computing power support and better completion testing, we will reintroduce the original Inlay completion mode.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="autodev-coder-67b-v1-experimental-version">AutoDev Coder 6.7B v1 Experimental Version<a href="https://ide.unitmesh.cc/en/blog/autodev-coder#autodev-coder-67b-v1-experimental-version" class="hash-link" aria-label="Direct link to AutoDev Coder 6.7B v1 Experimental Version" title="Direct link to AutoDev Coder 6.7B v1 Experimental Version">​</a></h2>
+<p>Current version is fine-tuned based on DeepSeek Coder 6.7b instruct model under LLaMA architecture.</p>
+<p>Note: As an experimental version, its primary purpose is to align the model, data tools, and IDE plugin for better coordination. Generation quality still requires further improvement.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="autodev-coder-64k-dataset">AutoDev Coder 64k Dataset<a href="https://ide.unitmesh.cc/en/blog/autodev-coder#autodev-coder-64k-dataset" class="hash-link" aria-label="Direct link to AutoDev Coder 64k Dataset" title="Direct link to AutoDev Coder 64k Dataset">​</a></h2>
+<p>The instruction composition of AutoDev Coder v1 64k is as follows:</p>
+<table><thead><tr><th>Filename</th><th>Selected Instructions</th></tr></thead><tbody><tr><td>java_oss.jsonl</td><td>4000</td></tr><tr><td>python_oss.jsonl</td><td>4000</td></tr><tr><td>code_bugfix_cleaned_5K.json</td><td>4000</td></tr><tr><td>codeGPT_CN_cleaned_20K.json</td><td>15000</td></tr><tr><td>code_summarization_CN_cleaned_10K.json</td><td>8000</td></tr><tr><td>code_generation_CN_cleaned_5K.json</td><td>4000</td></tr><tr><td>summary.jsonl</td><td>25000</td></tr></tbody></table>
+<p>The summary.jsonl is generated by our open-source code fine-tuning data framework UnitGen (<a href="https://github.com/unit-mesh/unit-gen" target="_blank" rel="noopener noreferrer">https://github.com/unit-mesh/unit-gen</a>).</p>
+<p>We selected dozens of Java and Kotlin open-source projects, generating instructions based on AutoDev plugin requirements, mainly categorized into three types:</p>
+<ul>
+<li>Completion (inline, interline, interblock)</li>
+<li>Documentation generation</li>
+<li>Comment generation</li>
+</ul>
+<p>Detailed documentation can be found in the UnitGen project: <a href="https://github.com/unit-mesh/unit-gen" target="_blank" rel="noopener noreferrer">https://github.com/unit-mesh/unit-gen</a>.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="faq-autodev-coder-model-evaluation">FAQ: AutoDev Coder Model Evaluation<a href="https://ide.unitmesh.cc/en/blog/autodev-coder#faq-autodev-coder-model-evaluation" class="hash-link" aria-label="Direct link to FAQ: AutoDev Coder Model Evaluation" title="Direct link to FAQ: AutoDev Coder Model Evaluation">​</a></h2>
+<p>Still under design. Since we need to combine AutoDev instructions with languages like Java, Kotlin, TypeScript rather than the Python-centric systems commonly used in open-source models, we need to rethink our evaluation approach.</p>
+<p>Initially, we used instruction sets like OSS Instruct to supplement natural language to code generation, but found ~50,000 instructions (about 50%) were Python-related. After filtering, only ~5,000 Java instructions remained, which showed suboptimal results in AutoDev.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="faq-autodev-instructions">FAQ: AutoDev Instructions<a href="https://ide.unitmesh.cc/en/blog/autodev-coder#faq-autodev-instructions" class="hash-link" aria-label="Direct link to FAQ: AutoDev Instructions" title="Direct link to FAQ: AutoDev Instructions">​</a></h2>
+<p>AutoDev employs contextual strategies that differ from other tools in instruction handling. Details: <a href="https://github.com/unit-mesh/auto-dev" target="_blank" rel="noopener noreferrer">https://github.com/unit-mesh/auto-dev</a></p>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[AutoDev 1.4 Scaling AI-Assisted Development]]></title>
+            <link>https://ide.unitmesh.cc/en/blog/2023/10/22/autodev-1-4-0</link>
+            <guid>https://ide.unitmesh.cc/en/blog/2023/10/22/autodev-1-4-0</guid>
+            <pubDate>Sun, 22 Oct 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Over the past two months, as Thoughtworks rolled out large-scale AI-assisted software delivery (AI4SoftwareDelivery) internally - involving thousands of Thoughtworkers across different roles and regions globally, along with dozens of internal sharing sessions.]]></description>
+            <content:encoded><![CDATA[<p>Over the past two months, as Thoughtworks rolled out large-scale AI-assisted software delivery (AI4SoftwareDelivery) internally - involving thousands of Thoughtworkers across different roles and regions globally, along with dozens of internal sharing sessions.</p>
+<p>We've incorporated more new features into AutoDev to continuously explore how to better assist teams in improving efficiency within IDEs. As the current best open-source AI-assisted programming tool in China, we've introduced several interesting features in AutoDev 1.4.0 to explore scalable AI-driven development efficiency improvements.</p>
+<p>AutoDev GitHub: <a href="https://github.com/unit-mesh/auto-dev" target="_blank" rel="noopener noreferrer">https://github.com/unit-mesh/auto-dev</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="team-prompts-codified-prompts-for-team-dissemination">Team Prompts: Codified Prompts for Team Dissemination<a href="https://ide.unitmesh.cc/en/blog/2023/10/22/autodev-1-4-0#team-prompts-codified-prompts-for-team-dissemination" class="hash-link" aria-label="Direct link to Team Prompts: Codified Prompts for Team Dissemination" title="Direct link to Team Prompts: Codified Prompts for Team Dissemination">​</a></h2>
+<p>Responding to our colleagues' enthusiasm for TDD (Test-Driven Development), specifically the #49 issue requesting "Support TDD mode to generate implementations based on specified tests", we developed the Team Prompts feature. Now you can directly write prompts in your code repository, and AutoDev will read these prompts to enhance AI-assisted functionality.</p>
+<p><img decoding="async" loading="lazy" src="https://prod-files-secure.s3.us-west-2.amazonaws.com/ba3432d7-a5ac-428b-9d05-6d088dd5940a/5cecc645-e9fd-466a-8adc-2f69b15299e3/Untitled.png" alt="Untitled" class="img_ev3q"></p>
+<p>This means:</p>
+<ul>
+<li>Share prompts across teams rather than maintaining personalized configurations</li>
+<li>Different teams within your organization can share their AI experiences</li>
+<li>No need for custom IDE requirements - just provide interface capabilities</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="team-prompts-example">Team Prompts Example<a href="https://ide.unitmesh.cc/en/blog/2023/10/22/autodev-1-4-0#team-prompts-example" class="hash-link" aria-label="Direct link to Team Prompts Example" title="Direct link to Team Prompts Example">​</a></h3>
+<p>Let's look at a simple example. First create (or configure) a Prompt directory in your repository, then write your prompts. For TDD scenarios:</p>
+<ul>
+<li>Tasking.vm: Split requirements into test cases</li>
+<li>TDD-Red.vm: Write the first failing test based on generated test cases</li>
+<li>TDD-Green.vm: Implement code to pass the test</li>
+<li>TDD-Refactor.vm: Refactor the implementation</li>
+</ul>
+<p>In these prompt files, simply use AutoDev's configuration to introduce context variables (reference: <a href="https://ide.unitmesh.cc/variables" target="_blank" rel="noopener noreferrer">https://ide.unitmesh.cc/variables</a>). Example:</p>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">---</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">priority: 2023</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">interaction: ChatPanel</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">---</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">```user```</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">You are a senior software engineer skilled in TDD. Improve existing implementations based on new test cases.</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Original implementation code: $context.underTestFileCode($methodName)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">New test code:</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">${selection}</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Optimize the class under test based on new tests. Return method code using ``` to start your code block:</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>The YAML FrontMatter at the beginning provides simple configurations:</p>
+<ul>
+<li><code>priority</code> determines menu ordering</li>
+<li><code>interaction</code> controls output behavior:<!-- -->
+<ul>
+<li><code>ChatPanel</code> displays in right-side chat window</li>
+<li><code>AppendCursorStream</code> streams output in current document with typewriter effect</li>
+</ul>
+</li>
+</ul>
+<p>Context provides built-in system functions for extended capabilities.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="team-prompts-vs-custom-prompt">Team Prompts vs Custom Prompt<a href="https://ide.unitmesh.cc/en/blog/2023/10/22/autodev-1-4-0#team-prompts-vs-custom-prompt" class="hash-link" aria-label="Direct link to Team Prompts vs Custom Prompt" title="Direct link to Team Prompts vs Custom Prompt">​</a></h3>
+<p>AutoDev 1.1 introduced Custom Prompt for personal configurations, while Team Prompts offers unified team configurations. This allows creating scenario-specific AI instructions for rapid team sharing.</p>
+<p>We will continue evolving Team Prompts for better usability.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="custom-living-documentation-continuously-supporting-legacy-system-refactoring">Custom Living Documentation: Continuously Supporting Legacy System Refactoring<a href="https://ide.unitmesh.cc/en/blog/2023/10/22/autodev-1-4-0#custom-living-documentation-continuously-supporting-legacy-system-refactoring" class="hash-link" aria-label="Direct link to Custom Living Documentation: Continuously Supporting Legacy System Refactoring" title="Direct link to Custom Living Documentation: Continuously Supporting Legacy System Refactoring">​</a></h2>
+<p>Compared to conventional documentation generation, we find it more meaningful to generate code annotations that assist system refactoring.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="autodev-documentation-generation">AutoDev Documentation Generation<a href="https://ide.unitmesh.cc/en/blog/2023/10/22/autodev-1-4-0#autodev-documentation-generation" class="hash-link" aria-label="Direct link to AutoDev Documentation Generation" title="Direct link to AutoDev Documentation Generation">​</a></h3>
+<p>Inspired by JetBrains AI Assistant's documentation features, we added similar functionality in AutoDev. While initially considered symbolic, it proved valuable when documenting Chocolate Factory - simply select a class/method/variable, right-click or press Alt+Enter to generate documentation. Existing documentation will be updated based on current code (when AI permits).</p>
+<p>For SDK development, we recommend adopting the Documentation Engineering approach described in <a href="https://dx.phodal.com/docs/patterns/document-engineering.html" target="_blank" rel="noopener noreferrer">Developer Experience: Exploration and Reshaping</a>, as implemented in Chocolate Factory where tests and comments generate reliable documentation.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="custom-living-documentation-generation">Custom Living Documentation Generation<a href="https://ide.unitmesh.cc/en/blog/2023/10/22/autodev-1-4-0#custom-living-documentation-generation" class="hash-link" aria-label="Direct link to Custom Living Documentation Generation" title="Direct link to Custom Living Documentation Generation">​</a></h3>
+<p>Based on experience with legacy system refactoring tools and large insurance company cases, generating annotation-style documentation directly from code significantly reduces reading costs. Combining existing code with new documentation enables better RAG capabilities for extracting meaningful knowledge from code.</p>
+<p>In AutoDev, simply add examples to guide LLM documentation generation:</p>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token property" style="color:#36acaa">"documentations"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">[</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token property" style="color:#36acaa">"title"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"Living Documentation"</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token property" style="color:#36acaa">"prompt"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"Generate Living Documentation in the following format:"</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token property" style="color:#36acaa">"start"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">""</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token property" style="color:#36acaa">"end"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">""</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token property" style="color:#36acaa">"type"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"annotated"</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token property" style="color:#36acaa">"example"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token property" style="color:#36acaa">"question"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"..."</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token property" style="color:#36acaa">"answer"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"..."</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Customize annotation formats for different scenarios, including Swagger annotations for API documentation.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="code-review">Code Review<a href="https://ide.unitmesh.cc/en/blog/2023/10/22/autodev-1-4-0#code-review" class="hash-link" aria-label="Direct link to Code Review" title="Direct link to Code Review">​</a></h2>
+<p>As discussed in our previous article <a href="https://www.phodal.com/blog/llm-empowered-software-engineering-code-review/" target="_blank" rel="noopener noreferrer">AIGC Reshaping Software Engineering: Code Review</a>, we combine AutoDev with DevOps platforms for code reviews.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ide-side-code-review-best-practices">IDE-Side Code Review Best Practices<a href="https://ide.unitmesh.cc/en/blog/2023/10/22/autodev-1-4-0#ide-side-code-review-best-practices" class="hash-link" aria-label="Direct link to IDE-Side Code Review Best Practices" title="Direct link to IDE-Side Code Review Best Practices">​</a></h3>
+<p>For IDE-side reviews, we recommend focusing on business context understanding combined with syntax checks. Our design follows common workflows - reviewing multiple commits (e.g., all commits for a requirement) or historical changes of single files.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="requirement-system-integrated-code-review">Requirement System-Integrated Code Review<a href="https://ide.unitmesh.cc/en/blog/2023/10/22/autodev-1-4-0#requirement-system-integrated-code-review" class="hash-link" aria-label="Direct link to Requirement System-Integrated Code Review" title="Direct link to Requirement System-Integrated Code Review">​</a></h3>
+<p>For teams using AIGC efficiency tools, most already have mature DevOps practices like including requirement IDs in commit messages, e.g., <code>feat(devops): init first review command #8</code>.</p>
+<p>AutoDev can retrieve requirement system information using this ID (8 in example) to supplement business context for LLM analysis.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="conclusion">Conclusion<a href="https://ide.unitmesh.cc/en/blog/2023/10/22/autodev-1-4-0#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion">​</a></h2>
+<p>As an open-source project, we still have many areas for improvement. Please submit issues on GitHub: <a href="https://github.com/unit-mesh/auto-dev" target="_blank" rel="noopener noreferrer">https://github.com/unit-mesh/auto-dev</a> if you encounter any problems.</p>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[AutoDev 1.0]]></title>
+            <link>https://ide.unitmesh.cc/en/blog/autodev-1-0-0</link>
+            <guid>https://ide.unitmesh.cc/en/blog/autodev-1-0-0</guid>
+            <pubDate>Sun, 06 Aug 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[In April, through the article "AutoDev]]></description>
+            <content:encoded><![CDATA[<p>In April, through the article <strong>"AutoDev: AI Breaks Through R&amp;D Efficiency, Exploring New Opportunities in Platform Engineering"</strong>, we outlined the initial impact of AI on software development. We established several fundamental assumptions:</p>
+<ul>
+<li>Large and medium-sized enterprises will <strong>possess at least one</strong> proprietary large language model.</li>
+<li>Only end-to-end tools can achieve quality and efficiency improvements through AI.</li>
+</ul>
+<p>Based on these assumptions, we began building AutoDev and open-sourced it. I've also documented all development insights on my blog, hoping to assist domestic enterprises in establishing their own AI-assisted programming capabilities.</p>
+<p>As an open-source project, let's start with the GitHub address: <a href="https://github.com/unit-mesh/auto-dev" target="_blank" rel="noopener noreferrer">https://github.com/unit-mesh/auto-dev</a>.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="designing-three-assistance-modes-around-developer-experience">Designing Three Assistance Modes Around Developer Experience<a href="https://ide.unitmesh.cc/en/blog/autodev-1-0-0#designing-three-assistance-modes-around-developer-experience" class="hash-link" aria-label="Direct link to Designing Three Assistance Modes Around Developer Experience" title="Direct link to Designing Three Assistance Modes Around Developer Experience">​</a></h2>
+<p>Initially, I didn't have a clear development blueprint. As a daily code-writing "expert-level" programmer, I built features based on my immediate needs.</p>
+<p>Subsequently, I categorized all features into three assistance modes:</p>
+<ul>
+<li>Chat Mode</li>
+<li>Copilot Mode</li>
+<li>Completion Mode</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="auto-mode-standardized-code-generation">Auto Mode: Standardized Code Generation<a href="https://ide.unitmesh.cc/en/blog/autodev-1-0-0#auto-mode-standardized-code-generation" class="hash-link" aria-label="Direct link to Auto Mode: Standardized Code Generation" title="Direct link to Auto Mode: Standardized Code Generation">​</a></h3>
+<p>Trigger method: All auto modes are under Context Actions, activated using the universal shortcut: <strong>⌥⏎</strong> (macOS) or <strong>Alt+Enter</strong> (Windows/Linux).</p>
+<p>Design philosophy: Similar to the one-click pattern we designed in ClickPrompt. Code shouldn't be like various flashy demos online - it must consider existing team conventions, otherwise generated code remains unusable. Focusing on configurability and implicit knowledge scenarios, we implemented three Auto scenarios:</p>
+<ol>
+<li><strong>Auto CRUD</strong>: Reads requirements from issue systems, uses a manually coded agent for continuous interaction to find suitable controllers, modify methods, add new methods, etc. Currently supports Kotlin and JavaScript.</li>
+<li><strong>Auto Test Generation</strong>: Generates and automatically runs tests for selected classes/methods (when RunConfiguration is appropriate). Supports JavaScript, Kotlin, and Java.</li>
+<li><strong>Auto Code Completion</strong>: Context-aware code filling. Capabilities vary by language due to limited resources:<!-- -->
+<ul>
+<li>Java: Incorporates <strong>code specifications</strong></li>
+<li>Kotlin/Java: Adds parameter/return type classes as context</li>
+<li>Other languages: Uses similarity algorithms (no questions about inspiration sources) comparable to GitHub Copilot and JetBrains AI Assistant</li>
+</ul>
+</li>
+</ol>
+<p>Each auto mode includes automated context preparation. The following image shows <strong>visible</strong> context for code completion:</p>
+<p><img decoding="async" loading="lazy" src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4896c2bb-7356-4d15-a7d8-344e61b7b8db/Untitled.png" alt="Untitled" class="img_ev3q"></p>
+<p>This context combines configured specifications with BlogController-related fields, parameters, return types (e.g., BlogService), etc.</p>
+<p>Additionally, hidden contexts exist, such as language declarations in AutoDev configurations:</p>
+<div class="language-kotlin codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-kotlin codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">You MUST Use 中文 </span><span class="token keyword" style="color:#00009f">to</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">return</span><span class="token plain"> your answer </span><span class="token operator" style="color:#393A34">!</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Interestingly, with just two "中文" mentions, there's about 50% chance of non-compliance. Considering adding three repetitions.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="companion-mode-daily-workflow-integration">Companion Mode: Daily Workflow Integration<a href="https://ide.unitmesh.cc/en/blog/autodev-1-0-0#companion-mode-daily-workflow-integration" class="hash-link" aria-label="Direct link to Companion Mode: Daily Workflow Integration" title="Direct link to Companion Mode: Daily Workflow Integration">​</a></h3>
+<p>When designing companion mode, we referenced existing tools like AI Commit while addressing personal needs.</p>
+<p>Since companion modes require waiting for LLM responses, they're grouped under <code>AutoDev Chat</code>.</p>
+<p>However, JetBrains AI Assistant has become AutoDev's main competitor (and reference) since its release. Features like "Explain with AI" and "Explain error message with AI" demonstrate excellent UX - areas where we still have room for improvement.</p>
+<p>In AutoDev, you can:</p>
+<ul>
+<li>Generate commit messages</li>
+<li>Create release notes</li>
+<li>Explain code</li>
+<li>Refactor code</li>
+<li>...and even generate DDL directly</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="chat-mode-a-peripheral-feature">Chat Mode: A Peripheral Feature<a href="https://ide.unitmesh.cc/en/blog/autodev-1-0-0#chat-mode-a-peripheral-feature" class="hash-link" aria-label="Direct link to Chat Mode: A Peripheral Feature" title="Direct link to Chat Mode: A Peripheral Feature">​</a></h3>
+<p>After UI redesign (inspired by JetBrains' approach, given their limited China support), we implemented one-click chat via Context Actions (see Figure 1).</p>
+<p>Chat freely here.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="reflections-on-llm-as-copilot">Reflections on LLM as Copilot<a href="https://ide.unitmesh.cc/en/blog/autodev-1-0-0#reflections-on-llm-as-copilot" class="hash-link" aria-label="Direct link to Reflections on LLM as Copilot" title="Direct link to Reflections on LLM as Copilot">​</a></h2>
+<p>Currently, LLMs serve as Copilots. They won't replace software engineering specialization but enhance professional capabilities through AI-assisted tools, impacting individual workflows.</p>
+<p>They should address <strong>"tasks I avoid"</strong> and <strong>"repetitive tasks"</strong> - writing tests, coding, resolving issues, commits, etc. As programmers, we should focus on creative design.</p>
+<p>AutoDev focuses on: How can AI better assist human work while keeping engineers within their IDEs?</p>
+<p>The LLM as Copilot concept will see increasing tool refinement. As seasoned AI application engineers, we're contemplating how <strong>LLM as Co-Integrator</strong> can truly boost efficiency.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="faq">FAQ<a href="https://ide.unitmesh.cc/en/blog/autodev-1-0-0#faq" class="hash-link" aria-label="Direct link to FAQ" title="Direct link to FAQ">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="how-to-integrate-domesticprivate-llms">How to Integrate Domestic/Private LLMs?<a href="https://ide.unitmesh.cc/en/blog/autodev-1-0-0#how-to-integrate-domesticprivate-llms" class="hash-link" aria-label="Direct link to How to Integrate Domestic/Private LLMs?" title="Direct link to How to Integrate Domestic/Private LLMs?">​</a></h3>
+<p>We provide a Custom LLM Server Python interface example in the source code. Due to limited resources, we've only tested with internally deployed ChatGLM2. For other needs, please discuss via GitHub issues.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="why-only-intellij-version">Why Only Intellij Version?<a href="https://ide.unitmesh.cc/en/blog/autodev-1-0-0#why-only-intellij-version" class="hash-link" aria-label="Direct link to Why Only Intellij Version?" title="Direct link to Why Only Intellij Version?">​</a></h3>
+<p>As someone experienced in developing new language plugins, contributing to Intellij Community/Android Studio source code, and optimizing Harmony OS IDE architecture, I specialize in JetBrains IDE development.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="when-will-vs-code-version-arrive">When Will VS Code Version Arrive?<a href="https://ide.unitmesh.cc/en/blog/autodev-1-0-0#when-will-vs-code-version-arrive" class="hash-link" aria-label="Direct link to When Will VS Code Version Arrive?" title="Direct link to When Will VS Code Version Arrive?">​</a></h3>
+<p>Short answer: Not soon.</p>
+<p>Though I've studied VS Code/X Editor source code:</p>
+<ol>
+<li>VS Code lacks critical IDE interfaces</li>
+<li>Implementation challenges:<!-- -->
+<ul>
+<li>TextMate-based tokenization (unreliable Oniguruma regex)</li>
+<li>Limited LSP implementation references</li>
+</ul>
+</li>
+<li>No quality reference implementations</li>
+</ol>
+<p>The ideal approach would be GitHub Copilot-style IDE-agnostic Agent mechanisms with TreeSitter for language processing.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="additional-notes">Additional Notes<a href="https://ide.unitmesh.cc/en/blog/autodev-1-0-0#additional-notes" class="hash-link" aria-label="Direct link to Additional Notes" title="Direct link to Additional Notes">​</a></h2>
+<p>AutoDev positions LLMs as developer Copilots, providing assistance tools to handle tedious tasks, enabling engineers to focus on creative design and problem-solving.</p>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[AutoDev 0.7.0 - Generating Standardized Code, Deep Integration into Developer Daily Work]]></title>
+            <link>https://ide.unitmesh.cc/en/blog/autodev-0-7-0</link>
+            <guid>https://ide.unitmesh.cc/en/blog/autodev-0-7-0</guid>
+            <pubDate>Sun, 23 Jul 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Months ago, we embarked on exploring]]></description>
+            <content:encoded><![CDATA[<p>Months ago, we embarked on exploring: <strong>How to combine AIGC for R&amp;D efficiency improvement?</strong> We open-sourced AutoDev, as introduced on GitHub:</p>
+<blockquote>
+<p>AutoDev is a LLM/AI-assisted programming plugin for JetBrains IDEs. AutoDev can directly integrate with your requirement management systems (e.g., Jira, Trello, Github Issues, etc.). Within the IDE, with simple clicks, AutoDev automatically generates code based on your requirements. All you need to do is perform quality checks on the generated code.</p>
+</blockquote>
+<p>Through our exploration of LLM capability boundaries, we discovered some more interesting patterns that have been incorporated into AutoDev.</p>
+<p>PS: Search for <code>AutoDev</code> in JetBrains plugins and install it. Configure your LLM (e.g., OpenAI and its proxies, open-source LLMs, etc.) to start using.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="why-autodev-understanding-the-integration-of-genai--software-development">WHY AutoDev? Understanding the Integration of GenAI + Software Development<a href="https://ide.unitmesh.cc/en/blog/autodev-0-7-0#why-autodev-understanding-the-integration-of-genai--software-development" class="hash-link" aria-label="Direct link to WHY AutoDev? Understanding the Integration of GenAI + Software Development" title="Direct link to WHY AutoDev? Understanding the Integration of GenAI + Software Development">​</a></h2>
+<p>Regarding generative AI, we maintain views similar to our previous sharing:</p>
+<ol>
+<li>GenAI can improve efficiency in almost every phase of the R&amp;D process.</li>
+<li>More effective for standardized processes, with limited benefits for less standardized small teams.</li>
+<li>Efficiency gains need tool implementation due to the time cost of prompt writing.</li>
+</ol>
+<p>Therefore, when designing AutoDev, our goals were:</p>
+<ol>
+<li>End-to-end integration to reduce interaction costs - from prompt writing to LLM interaction, then copying back into tools.</li>
+<li>Automatic collection of prompt context for content/code generation</li>
+<li>Final human verification and correction of AI-generated code.</li>
+</ol>
+<p>Thus, manual specification organization and automatic context collection to improve generation quality became our focus in tool development.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="autodev-07-new-features">AutoDev 0.7 New Features<a href="https://ide.unitmesh.cc/en/blog/autodev-0-7-0#autodev-07-new-features" class="hash-link" aria-label="Direct link to AutoDev 0.7 New Features" title="Direct link to AutoDev 0.7 New Features">​</a></h2>
+<p>From the big demo in April to the new version today, we continuously studied implementations of GitHub Copilot, JetBrains AI Assistant, Cursor, Bloop, etc. Each tool has unique selling points. Combined with my daily development habits, we added a series of exploratory new features.</p>
+<p>Details on GitHub: <a href="https://github.com/unit-mesh/auto-dev" target="_blank" rel="noopener noreferrer">https://github.com/unit-mesh/auto-dev</a></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="feature-1-built-in-architectural-specifications--code-standards">Feature 1: Built-in Architectural Specifications &amp; <strong>Code Standards</strong><a href="https://ide.unitmesh.cc/en/blog/autodev-0-7-0#feature-1-built-in-architectural-specifications--code-standards" class="hash-link" aria-label="Direct link to feature-1-built-in-architectural-specifications--code-standards" title="Direct link to feature-1-built-in-architectural-specifications--code-standards">​</a></h3>
+<p>LLM's "parrot mode" (generation mechanism) produces code matching current context programming habits. When using AI code generation features like GitHub Copilot, it generates new API code based on how we handle existing APIs. If our code uses Swagger annotations, it will generate similar code in the same Controller.</p>
+<p>This implies a problem: If predecessors wrote non-standard code, generated code will also be non-standard. Therefore, we added CRUD template code specification configuration:</p>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token property" style="color:#36acaa">"spec"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">"controller"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"- Use BeanUtils.copyProperties for DTO to Entity conversion in Controllers"</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">"service"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"- Service layer should use constructor injection or setter injection, avoid @Autowired annotation"</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">"entity"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"- Entity classes should use JPA annotations for database mapping"</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">"repository"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"- Repository interfaces should extend JpaRepository for basic CRUD operations"</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">"ddl"</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">"- Fields should use NOT NULL constraints to ensure data integrity"</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>In special scenarios, specifications alone are insufficient - sample code configuration is needed. With this configuration, when generating Controller/Service code, we can directly apply these specifications.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="feature-2-deep-integration-into-developer-daily-activities">Feature 2: Deep Integration into Developer Daily Activities<a href="https://ide.unitmesh.cc/en/blog/autodev-0-7-0#feature-2-deep-integration-into-developer-daily-activities" class="hash-link" aria-label="Direct link to Feature 2: Deep Integration into Developer Daily Activities" title="Direct link to Feature 2: Deep Integration into Developer Daily Activities">​</a></h3>
+<p>In the April release, AutoDev integrated basic programming activities: AI code completion, comment generation, code refactoring, code explanation, etc.</p>
+<p>While developing AutoDev itself, we discovered more interesting needs and integrated them into the IDE:</p>
+<ul>
+<li>One-click commit message generation. When using IDEA's commit UI, generate suggested commit messages.</li>
+<li>One-click changelog generation. Select multiple commits in history to generate CHANGELOG based on messages.</li>
+<li>Error message analysis. During debugging, select error messages to automatically analyze with LLM combining error context.</li>
+<li>Test code generation.</li>
+</ul>
+<p>Combined with AutoDev's core strength of automatic CRUD from requirements, the feature set becomes more comprehensive.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="feature-3-multi-language-ai-support">Feature 3: <strong>Multi-language AI Support</strong><a href="https://ide.unitmesh.cc/en/blog/autodev-0-7-0#feature-3-multi-language-ai-support" class="hash-link" aria-label="Direct link to feature-3-multi-language-ai-support" title="Direct link to feature-3-multi-language-ai-support">​</a></h3>
+<p>In April, we found LLMs excel at CRUD, so chose Java for initial implementation. However, languages I frequently use like Kotlin/Rust/TypeScript lacked support.</p>
+<p>Referencing Intellij Rust's modular architecture, we reorganized layers/modules using Intellij Plugin extension points (XML + Java) to rebuild the foundation.</p>
+<p>New extension points in the architecture:</p>
+<ul>
+<li>Language data structure extensions. Originally designed for UML representation when tokens are limited. Later referenced (copied) JetBrains AI Assistant's language extensions - language-specific data structures implemented in their own modules.</li>
+<li>Language prompt extensions. Language-specific prompt differences moved to respective modules.</li>
+<li>Custom CRUD workflows. Existing CRUD implementation was Java-specific. Now each language implements its own approach.</li>
+</ul>
+<p>Currently, Java/Kotlin still have the best support.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="feature-4-broader-llm-support">Feature 4: Broader LLM Support<a href="https://ide.unitmesh.cc/en/blog/autodev-0-7-0#feature-4-broader-llm-support" class="hash-link" aria-label="Direct link to Feature 4: Broader LLM Support" title="Direct link to Feature 4: Broader LLM Support">​</a></h3>
+<p>AutoDev's original design considered our second hypothesis: Every major company will launch its own LLM. Each LLM has unique characteristics, requiring broader LLM support.</p>
+<ul>
+<li>OpenAI &amp; proxies. Most tested and complete implementation.</li>
+<li>Azure OpenAI. As a legal OpenAI channel in China, we implemented preliminary support and gradually improved it.</li>
+<li>Other LLMs. While suitable domestic LLM APIs haven't been found yet, the interface supports such integration.</li>
+</ul>
+<p>Welcome to experiment with your own LLMs.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="feature-5-smarter-prompt-strategies">Feature 5: Smarter Prompt Strategies<a href="https://ide.unitmesh.cc/en/blog/autodev-0-7-0#feature-5-smarter-prompt-strategies" class="hash-link" aria-label="Direct link to Feature 5: Smarter Prompt Strategies" title="Direct link to Feature 5: Smarter Prompt Strategies">​</a></h3>
+<p>In our May article <strong><a href="https://www.phodal.com/blog/llm-context-engineering/" target="_blank" rel="noopener noreferrer">Context Engineering: Real-time Capability Analysis Based on GitHub Copilot</a></strong>, we analyzed GitHub Copilot's prompt strategies. Core promptElements include: <code>BeforeCursor</code>, <code>AfterCursor</code>, <code>SimilarFile</code>, <code>ImportedFile</code>, <code>LanguageMarker</code>, <code>PathMarker</code>, <code>RetrievalSnippet</code>, etc.</p>
+<p>Discovering JetBrains AI Assistant uses similar approaches, we refined AutoDev's prompt strategies:</p>
+<ul>
+<li>Code context strategies:<!-- -->
+<ul>
+<li>Java + CRUD mode: Build context using related code (BeforeCursor), all called methods, called lines, UML-like class diagrams.</li>
+<li>Other Java modes: Use DtModel to build UML-like comments as reference.</li>
+<li>Python: Use import-based similar code snippets as LLM reference.</li>
+</ul>
+</li>
+<li>Token allocation strategy: Distribute context based on token limits.</li>
+</ul>
+<p>As a "smart context" strategy, current implementation still needs optimization.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="others">Others<a href="https://ide.unitmesh.cc/en/blog/autodev-0-7-0#others" class="hash-link" aria-label="Direct link to Others" title="Direct link to Others">​</a></h2>
+<p>Feel free to discuss code on GitHub: <a href="https://github.com/unit-mesh/auto-dev" target="_blank" rel="noopener noreferrer">https://github.com/unit-mesh/auto-dev</a>.</p>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[AutoDev：AI 突破研发效能，探索平台工程新机遇]]></title>
+            <link>https://ide.unitmesh.cc/en/blog/2023/04/18/autodev</link>
+            <guid>https://ide.unitmesh.cc/en/blog/2023/04/18/autodev</guid>
+            <pubDate>Tue, 18 Apr 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[围绕于探索 AI 对软件研发的影响，并在有了 LLM 微调工程化能力之后，我们上周末又开源了一个适用于 AI 研发提效的工具：AutoDev。如此一来，我们便构建了接近完整的 AI 在研发效能提升。]]></description>
+            <content:encoded><![CDATA[<p>围绕于探索 AI 对软件研发的影响，并在有了 LLM 微调工程化能力之后，我们上周末又开源了一个适用于 AI 研发提效的工具：AutoDev。如此一来，我们便构建了接近完整的 AI 在研发效能提升。</p>
+<p>在这篇文章中，我们将基于 Unit Mesh、DevTi、AutoDev 等一系列的探索，分享 AI 对于研发效能的影响，以及对于平台工程带来的新机遇。</p>
+<p>PS：整个体系站在一个基本假设是：中大型企业将<strong>至少拥有一个</strong>私有化的大语言模型。</p>
+<p>GitHub： <a href="https://github.com/unit-mesh/auto-dev" target="_blank" rel="noopener noreferrer">https://github.com/unit-mesh/auto-dev</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="引子-1devti--软件开发工程化--llm-微调">引子 1：DevTi = 软件开发工程化 + LLM 微调<a href="https://ide.unitmesh.cc/en/blog/2023/04/18/autodev#%E5%BC%95%E5%AD%90-1devti--%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%8C%96--llm-%E5%BE%AE%E8%B0%83" class="hash-link" aria-label="Direct link to 引子 1：DevTi = 软件开发工程化 + LLM 微调" title="Direct link to 引子 1：DevTi = 软件开发工程化 + LLM 微调">​</a></h2>
+<blockquote>
+<p>DevTi（Development + Titanium）一款基于大语言模型的研发效能提升的开源项目。旨在基于 LLM 的微调来提供全面智能化解决方案，助力开发人员高效完成开发任务，以实现自动化用户任务拆解、用户故事生成、自动化代码生成、自动化测试生成等等。</p>
+</blockquote>
+<p>简单来说，DevTi 是 AI + 研发效能领域的小模型的工具链 —— 借助于 DevTi，你可以快速训练出适用于软件研发的微调模型。一个简化的流程，如下图所示：</p>
+<p><img decoding="async" loading="lazy" src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f097631a-4cb6-4de5-a064-372d84a396a6/Untitled.png" alt="Untitled" class="img_ev3q"></p>
+<p>为了进行相关的模型微调或者训练，在其中的每一个阶段里，我们都需要准备数据、处理数据、生成 prompt 等，如准备一系列的用户故事、代码生成的数据。所以，作为工程师，需要准备一系列的编程基础设施或者模块。</p>
+<p>DevTi 所包含的模块如下所示：</p>
+<p><img decoding="async" loading="lazy" src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fe81717b-52a8-4138-8ad4-52073ddb20fe/Untitled.png" alt="Untitled" class="img_ev3q"></p>
+<p>它包含了 4.5 个模块：</p>
+<ul>
+<li>Collector（Python, JavaScript），数据收集。这个模块负责从不同的数据源（如 GitHub、Stack Overflow、CodePen 等）收集代码片段、问题、答案等数据，以便用于微调。</li>
+<li>Processor（Kotlin），数据处理。这个模块负责对收集到的数据进行清洗、格式化、标注等预处理操作，以提高数据质量和一致性。</li>
+<li>Prompter（Python），Prompt 设计、调整、优化等。这个模块负责根据用户的需求和场景，设计合适的 Prompt 来引导大语言模型生成期望的输出，例如用户故事、代码片段、测试用例等。</li>
+<li>Train（Python），训练相关的 Notebook。这个模块包含了一些 Jupyter Notebook 文件，用于展示如何使用不同的大语言模型微调（如 ChatGLM、LLaMA等）来完成不同的研发任务，例如代码生成、代码补全、代码注释等。</li>
+<li>Chain。待定</li>
+</ul>
+<p>随后，便可以围绕于 DevTi 构建工具链，如 IDE 工具、看板工具等等。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="引子-2autodev--ide-插件--ai-api-调用">引子 2：AutoDev = IDE 插件 + AI API 调用<a href="https://ide.unitmesh.cc/en/blog/2023/04/18/autodev#%E5%BC%95%E5%AD%90-2autodev--ide-%E6%8F%92%E4%BB%B6--ai-api-%E8%B0%83%E7%94%A8" class="hash-link" aria-label="Direct link to 引子 2：AutoDev = IDE 插件 + AI API 调用" title="Direct link to 引子 2：AutoDev = IDE 插件 + AI API 调用">​</a></h2>
+<blockquote>
+<p>AutoDev 是一款高度自动化的 AI 辅助编程工具。AutoDev 能够与您的需求管理系统（例如
+Jira、Trello、Github Issue 等）直接对接。在 IDE 中，您只需简单点击，AutoDev
+会根据您的需求自动为您生成代码。您所需做的，仅仅是对生成的代码进行质量检查。</p>
+</blockquote>
+<p>简单来说，AutoDev 定位是适用于私有化大语言模型 + 高度集成的 AI 编程助手。AutoDev 提供了一种 AutoCRUD 模式，其设计理解的过程是：</p>
+<ol>
+<li>从需求管理系统获取需求，并进行需求分析。</li>
+<li>结合源码与需求系统，选择最适合变更的入口（如 Java 中的 Controller）</li>
+<li>将需求与 Controller 交给 AI 分析，以实现代码的代码。</li>
+<li>根据 Controller 逐步自动完成其它部分代码（实现中…）</li>
+</ol>
+<p>另外一种模式则是普通的 Copilot 模式，可以接入现有的大模型工具，实现一系列的 AI 代码辅助相关功能。</p>
+<p><img decoding="async" loading="lazy" src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a6b953b9-9e49-48b2-a368-dddb6f4150b0/Untitled.png" alt="Untitled" class="img_ev3q"></p>
+<p>GitHub： <a href="https://github.com/unit-mesh/auto-dev" target="_blank" rel="noopener noreferrer">https://github.com/unit-mesh/auto-dev</a></p>
+<p>接入 LLM，我们不仅可以生成代码，还可以生成单元测试代码，从而提高测试效率和覆盖率。</p>
+<p>让我们再展开看一看，基于现有的 AI 能力，会有哪些新可能性。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="平台工程的变化与新机遇">平台工程的变化与新机遇<a href="https://ide.unitmesh.cc/en/blog/2023/04/18/autodev#%E5%B9%B3%E5%8F%B0%E5%B7%A5%E7%A8%8B%E7%9A%84%E5%8F%98%E5%8C%96%E4%B8%8E%E6%96%B0%E6%9C%BA%E9%81%87" class="hash-link" aria-label="Direct link to 平台工程的变化与新机遇" title="Direct link to 平台工程的变化与新机遇">​</a></h2>
+<p>而除了我们上述的 demo 之外，我们相信它带会其它带来一系列的变化。对于中大型组织的基础设施或者平台团队来说，要接入 AI 能力需要有更多的变化与机遇。</p>
+<blockquote>
+<p>平台工程是一种用来构建和运维支持软件交付和生命周期管理的自助式内部开发者平台的机制和架构。平台工程可以提高开发者的体验和生产力，提供自动化的基础设施操作。平台工程是软件工程组织的新趋势，它可以优化开发者的工作流程，加速产品团队交付客户价值。</p>
+</blockquote>
+<p>平台工程的核心思想是将平台视为一种产品，由专业的平台团队来创建和维护，为内部的客户（如开发者、数据科学家等）提供可复用的服务、组件和工具。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="需求自动化收敛分析与完善">需求：自动化收敛、分析与完善<a href="https://ide.unitmesh.cc/en/blog/2023/04/18/autodev#%E9%9C%80%E6%B1%82%E8%87%AA%E5%8A%A8%E5%8C%96%E6%94%B6%E6%95%9B%E5%88%86%E6%9E%90%E4%B8%8E%E5%AE%8C%E5%96%84" class="hash-link" aria-label="Direct link to 需求：自动化收敛、分析与完善" title="Direct link to 需求：自动化收敛、分析与完善">​</a></h3>
+<p>在现有的场景之下，已经有一系列的关于结合  AI 进行需求管理的尝试：</p>
+<ul>
+<li>自动化完善。对用户的反馈和数据的分析，自动识别和补充缺失的需求信息，例如自动识别用户提出的问题并转化为需求描述，自动补全需求的关键词和标签等。</li>
+<li>自动化分析。通过训练自带的领域知识，可以更好地评估和优化需求，发现潜在的问题和机会，提高需求的效率和效果。</li>
+<li>自动化收敛。结合其它 AI 技术，比如智能推荐、对话系统、多方协作等，可以帮助您更好地沟通和协调需求，收集和整合用户的反馈和痛点，提高需求的满意度和一致性。</li>
+<li>自动化迭代。结合人类反馈的 AI 数据，可以更好地更新和改进需求生成，适应不断变化的环境和用户需求，提高需求的持续性和创新性</li>
+</ul>
+<p>尽管现有的几个方案：LangChain、llama-index 等暂时只支持 OpenAI，但是随着更多开源大语言模型的加入，未来会更易于落地。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="工具链智能的-ide">工具链：智能的 IDE<a href="https://ide.unitmesh.cc/en/blog/2023/04/18/autodev#%E5%B7%A5%E5%85%B7%E9%93%BE%E6%99%BA%E8%83%BD%E7%9A%84-ide" class="hash-link" aria-label="Direct link to 工具链：智能的 IDE" title="Direct link to 工具链：智能的 IDE">​</a></h3>
+<p>对于现有的场景来说，已经相当的丰富，诸如于：</p>
+<ul>
+<li>自动化代码审查</li>
+<li>自动化测试</li>
+<li>自动化日志分析</li>
+<li>AI 辅助编程</li>
+<li>……</li>
+</ul>
+<p>诚然，诸如于 GitHub Copilot 等收费 AI 工具来说，对于大部分公司来说，贵可能是其次，重点是代码的安全性。而虽然国内各类新的模型层出不穷，但是大部分缺少编程相关的集成，又或者是编程能力比较弱。然而，市面上也有只用于编程相关的模型，如 Salesforce 在 Hugging Face 上提供的 16B CodeGen 模型。虽然，还需要经过一些小的微调，但是如 Replit 公司所言，效果还是非常不错的。</p>
+<p>随后，便是类似于 AutoDev 针对于大语言模型进行的封装，简化普通开发人员的开发过程。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="文档超越搜索">文档：超越搜索<a href="https://ide.unitmesh.cc/en/blog/2023/04/18/autodev#%E6%96%87%E6%A1%A3%E8%B6%85%E8%B6%8A%E6%90%9C%E7%B4%A2" class="hash-link" aria-label="Direct link to 文档：超越搜索" title="Direct link to 文档：超越搜索">​</a></h3>
+<p>在有了 LLM 和各种智能问答的基础上，我们还可以加入内部各种工具的文档和代码，以提供更全面、更智能的文档服务。例如，LangChain 构建的问答式文档，可以对企业内部的各种文档进行语义理解和智能问答，进而简化开发人员的学习成本。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="其它">其它<a href="https://ide.unitmesh.cc/en/blog/2023/04/18/autodev#%E5%85%B6%E5%AE%83" class="hash-link" aria-label="Direct link to 其它" title="Direct link to 其它">​</a></h2>
+<p>AI 正在带来一系列的变化，特别是对于中大型企业的平台工程团队来说，接入 AI 能力需要有更多的变化与机遇。例如，可以自动化收敛、分析与完善需求，构建智能的IDE，提供更全面、更智能的文档服务等。</p>
+<p>我们依旧在探索中，欢迎来加入我们。</p>]]></content:encoded>
+        </item>
+    </channel>
+</rss>
